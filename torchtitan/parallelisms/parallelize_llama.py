@@ -78,7 +78,7 @@ def torch_spmd_parallelize(
         apply_ac(model, ac_config)
 
     if parallel_dims.dp_enabled:
-        from torch_spmd.data_parallel import data_parallel, MixedPrecisionPolicy
+        from frontend_simplefsdp import SimpleFSDP_data_parallel
 
         mp_policy = MixedPrecisionPolicy(
             param_dtype=TORCH_DTYPE_MAP[job_config.training.mixed_precision_param],
@@ -86,9 +86,9 @@ def torch_spmd_parallelize(
         )
         dp_mesh = world_mesh["dp"] if world_mesh.ndim > 1 else world_mesh
 
-        model = data_parallel(
-            model,
-            dp_mesh,
+        model = SimpleFSDP_data_parallel(
+            model=model,
+            device_mesh=dp_mesh,
             mode="fully_shard",
             ac_mode=ac_config.mode,
             mp_policy=mp_policy,
