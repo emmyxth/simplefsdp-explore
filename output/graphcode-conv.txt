@@ -1,0 +1,31 @@
+[rank0]:V0218 07:42:38.274000 5450 torch/_dynamo/output_graph.py:1353] [2/0_1] [__graph_code] TRACED GRAPH
+[rank0]:V0218 07:42:38.274000 5450 torch/_dynamo/output_graph.py:1353] [2/0_1] [__graph_code]  ===== __compiled_fn_5 =====
+[rank0]:V0218 07:42:38.274000 5450 torch/_dynamo/output_graph.py:1353] [2/0_1] [__graph_code]  /home/user/.local/lib/python3.10/site-packages/torch/fx/_lazy_graph_module.py class GraphModule(torch.nn.Module):
+[rank0]:V0218 07:42:38.274000 5450 torch/_dynamo/output_graph.py:1353] [2/0_1] [__graph_code]     def forward(self, L_self_modules_conv1_parameters_weight_: "f32[16, 1, 2, 2][4, 4, 2, 1]cuda:0", L_self_modules_conv1_parameters_bias_: "f32[16][1]cuda:0", L_x_: "f32[1, 1, 28, 28][784, 784, 28, 1]cuda:0"):
+[rank0]:V0218 07:42:38.274000 5450 torch/_dynamo/output_graph.py:1353] [2/0_1] [__graph_code]         l_self_modules_conv1_parameters_weight_ = L_self_modules_conv1_parameters_weight_
+[rank0]:V0218 07:42:38.274000 5450 torch/_dynamo/output_graph.py:1353] [2/0_1] [__graph_code]         l_self_modules_conv1_parameters_bias_ = L_self_modules_conv1_parameters_bias_
+[rank0]:V0218 07:42:38.274000 5450 torch/_dynamo/output_graph.py:1353] [2/0_1] [__graph_code]         l_x_ = L_x_
+[rank0]:V0218 07:42:38.274000 5450 torch/_dynamo/output_graph.py:1353] [2/0_1] [__graph_code]         
+[rank0]:V0218 07:42:38.274000 5450 torch/_dynamo/output_graph.py:1353] [2/0_1] [__graph_code]          # File: /home/user/simplefsdp/frontend_simplefsdp.py:157 in replicate_compute, code: output = x.redistribute(
+[rank0]:V0218 07:42:38.274000 5450 torch/_dynamo/output_graph.py:1353] [2/0_1] [__graph_code]         prim_redistribute: "f32[16, 1, 2, 2][4, 4, 2, 1]cuda:0" = torch__dynamo_variables_tensor_prim_redistribute(l_self_modules_conv1_parameters_weight_);  l_self_modules_conv1_parameters_weight_ = None
+[rank0]:V0218 07:42:38.274000 5450 torch/_dynamo/output_graph.py:1353] [2/0_1] [__graph_code]         output: "f32[16, 1, 2, 2][4, 4, 2, 1]cuda:0" = torch__dynamo_variables_tensor_prim_to_local(prim_redistribute);  prim_redistribute = None
+[rank0]:V0218 07:42:38.274000 5450 torch/_dynamo/output_graph.py:1353] [2/0_1] [__graph_code]         prim_redistribute_1: "f32[16][1]cuda:0" = torch__dynamo_variables_tensor_prim_redistribute_1(l_self_modules_conv1_parameters_bias_);  l_self_modules_conv1_parameters_bias_ = None
+[rank0]:V0218 07:42:38.274000 5450 torch/_dynamo/output_graph.py:1353] [2/0_1] [__graph_code]         output_1: "f32[16][1]cuda:0" = torch__dynamo_variables_tensor_prim_to_local_1(prim_redistribute_1);  prim_redistribute_1 = None
+[rank0]:V0218 07:42:38.274000 5450 torch/_dynamo/output_graph.py:1353] [2/0_1] [__graph_code]         
+[rank0]:V0218 07:42:38.274000 5450 torch/_dynamo/output_graph.py:1353] [2/0_1] [__graph_code]          # File: /home/user/simplefsdp/run-basic.py:37 in patched_conv2d, code: weight = DTensor.from_local(weight, mesh, placements)
+[rank0]:V0218 07:42:38.274000 5450 torch/_dynamo/output_graph.py:1353] [2/0_1] [__graph_code]         weight: "f32[16, 1, 2, 2][4, 4, 2, 1]cuda:0" = torch__dynamo_variables_torch_prim_from_local(output);  output = None
+[rank0]:V0218 07:42:38.274000 5450 torch/_dynamo/output_graph.py:1353] [2/0_1] [__graph_code]         
+[rank0]:V0218 07:42:38.274000 5450 torch/_dynamo/output_graph.py:1353] [2/0_1] [__graph_code]          # File: /home/user/simplefsdp/run-basic.py:39 in patched_conv2d, code: bias = DTensor.from_local(bias, mesh, placements)
+[rank0]:V0218 07:42:38.274000 5450 torch/_dynamo/output_graph.py:1353] [2/0_1] [__graph_code]         bias: "f32[16][1]cuda:0" = torch__dynamo_variables_torch_prim_from_local_1(output_1);  output_1 = None
+[rank0]:V0218 07:42:38.274000 5450 torch/_dynamo/output_graph.py:1353] [2/0_1] [__graph_code]         
+[rank0]:V0218 07:42:38.274000 5450 torch/_dynamo/output_graph.py:1353] [2/0_1] [__graph_code]          # File: /home/user/simplefsdp/run-basic.py:40 in patched_conv2d, code: out = _original_conv2d(input, weight, bias, stride, padding, dilation, groups)
+[rank0]:V0218 07:42:38.274000 5450 torch/_dynamo/output_graph.py:1353] [2/0_1] [__graph_code]         out: "f32[1, 16, 14, 14][3136, 196, 14, 1]cuda:0" = torch.conv2d(l_x_, weight, bias, (2, 2), (0, 0), (1, 1), 1);  l_x_ = weight = bias = None
+[rank0]:V0218 07:42:38.274000 5450 torch/_dynamo/output_graph.py:1353] [2/0_1] [__graph_code]         
+[rank0]:V0218 07:42:38.274000 5450 torch/_dynamo/output_graph.py:1353] [2/0_1] [__graph_code]          # File: /home/user/simplefsdp/run-basic.py:42 in patched_conv2d, code: return DTensor.from_local(out, mesh, placements)
+[rank0]:V0218 07:42:38.274000 5450 torch/_dynamo/output_graph.py:1353] [2/0_1] [__graph_code]         prim_from_local_2: "f32[1, 16, 14, 14][3136, 196, 14, 1]cuda:0" = torch__dynamo_variables_torch_prim_from_local_2(out);  out = None
+[rank0]:V0218 07:42:38.274000 5450 torch/_dynamo/output_graph.py:1353] [2/0_1] [__graph_code]         
+[rank0]:V0218 07:42:38.274000 5450 torch/_dynamo/output_graph.py:1353] [2/0_1] [__graph_code]          # File: /home/user/simplefsdp/run-basic.py:88 in forward, code: x = F.relu(self.conv1(x))
+[rank0]:V0218 07:42:38.274000 5450 torch/_dynamo/output_graph.py:1353] [2/0_1] [__graph_code]         x: "f32[1, 16, 14, 14][3136, 196, 14, 1]cuda:0" = torch.nn.functional.relu(prim_from_local_2);  prim_from_local_2 = None
+[rank0]:V0218 07:42:38.274000 5450 torch/_dynamo/output_graph.py:1353] [2/0_1] [__graph_code]         return (x,)
+[rank0]:V0218 07:42:38.274000 5450 torch/_dynamo/output_graph.py:1353] [2/0_1] [__graph_code]         
+[rank0]:V0218 07:42:38.274000 5450 torch/_dynamo/output_graph.py:1353] [2/0_1] [__graph_code] 
