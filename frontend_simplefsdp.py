@@ -5,8 +5,10 @@ from typing import Dict, Optional, Tuple, Type
 import torch
 import torch.nn as nn
 import torch.distributed
+
 # from torch.distributed.fsdp._fsdp_api import MixedPrecisionPolicy
 from torch.distributed._composable.fsdp import fully_shard, MixedPrecisionPolicy
+
 # from torch.distributed._composable.fsdp._fsdp_common import _cast_fp_tensor
 from torch.distributed.tensor import (
     distribute_tensor,
@@ -35,6 +37,7 @@ def _cast_fp_tensor(dtype: torch.dtype, x: torch.Tensor) -> torch.Tensor:
     ):
         return x
     return x.to(dtype)
+
 
 @contextmanager
 def disable_active_parametrization():  # type: ignore[no-untyped-def]
@@ -110,8 +113,7 @@ class ReplicateComputation(torch.nn.Module):
         self.param_sharding = param_sharding
         self.mode = mode
         self.compute_placements = [Replicate()] * self.device_mesh.ndim
-        self.grad_placements = [
-            Partial(reduce_op="avg")] * self.device_mesh.ndim
+        self.grad_placements = [Partial(reduce_op="avg")] * self.device_mesh.ndim
         self.reshard_after_forward = reshard_after_forward
         self.mp_policy = mp_policy or MixedPrecisionPolicy()
 
@@ -142,8 +144,7 @@ class ReplicateComputation(torch.nn.Module):
             # the actual FSDP all-gather on dp_mesh
             replicated_dtensor = sharded_dtensor.redistribute(
                 placements=self.compute_placements,
-                forward_dtype=self.mp_policy.param_dtype,
-                backward_dtype=self.mp_policy.reduce_dtype,
+                device_mesh=self.device_mesh,
             )
 
             # re-wrap 1D all-gathered DTensor on dp_mesh to 1D DTensor on tp_mesh
@@ -157,8 +158,7 @@ class ReplicateComputation(torch.nn.Module):
         else:
             output = x.redistribute(
                 placements=self.compute_placements,
-                forward_dtype=self.mp_policy.param_dtype,
-                backward_dtype=self.mp_policy.reduce_dtype,
+                device_mesh=self.device_mesh,
             ).to_local(grad_placements=self.grad_placements)
 
         return output
@@ -350,8 +350,7 @@ def SimpleFSDP_data_parallel(
         # TODO(yf225): We need to add unit tests for this block of code: 1. model has two linears (first bias=True then bias=False), 2. model has two linears of different shapes.
         param_properties_key = "#".join(sorted(param_properties.keys()))
         # NOTE(yf225): Q: why do we need class cache? A: we intentionally don't want to create one new class per module instance (to avoid recompilation per new class).
-        new_cls = cls_key_to_SimpleFSDP_cls.get(
-            (cls, param_properties_key), None)
+        new_cls = cls_key_to_SimpleFSDP_cls.get((cls, param_properties_key), None)
         if not new_cls:
             namespace = {"__deepcopy__": unimplemented_deepcopy}
             for p_name in param_properties:
