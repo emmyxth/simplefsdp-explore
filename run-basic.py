@@ -9,10 +9,57 @@ import torch.distributed as dist
 import torch.multiprocessing as mp
 from torch.distributed.device_mesh import init_device_mesh
 from torch.distributed._composable.fsdp import fully_shard, MixedPrecisionPolicy
+from torch.distributed.tensor import (
+    distribute_tensor,
+    DTensor,
+    Partial,
+    Replicate,
+    Shard,
+)
+
 
 # Import your SimpleFSDP_data_parallel wrapper from wherever it's defined
-from frontend_simplefsdp import SimpleFSDP_data_parallel
-from torch.distributed.tensor import distribute_tensor, Replicate
+from frontend_simplefsdp import SimpleFSDP_data_parallel, enable_active_parametrization
+from torch.distributed.tensor import distribute_tensor
+
+torch._logging.set_logs(graph_code=True)  # Logging set up
+
+
+# --- Patch F.conv2d ---
+_original_conv2d = F.conv2d
+
+
+def patched_conv2d(input, weight, bias=None, stride=1, padding=0, dilation=1, groups=1):
+    # If the input is a DTensor, we assume its _spec contains the mesh and placements
+    if isinstance(input, DTensor):
+        mesh = input._spec.mesh
+        placements = input._spec.placements
+        if not isinstance(weight, DTensor):
+            weight = DTensor.from_local(weight, mesh, placements)
+        if bias is not None and not isinstance(bias, DTensor):
+            bias = DTensor.from_local(bias, mesh, placements)
+    return _original_conv2d(input, weight, bias, stride, padding, dilation, groups)
+
+
+F.conv2d = patched_conv2d
+
+# --- Patch F.linear ---
+_original_linear = F.linear
+
+
+def patched_linear(input, weight, bias=None):
+    if isinstance(input, DTensor):
+        mesh = input._spec.mesh
+        placements = input._spec.placements
+        if not isinstance(weight, DTensor):
+            weight = DTensor.from_local(weight, mesh, placements)
+        if bias is not None and not isinstance(bias, DTensor):
+            bias = DTensor.from_local(bias, mesh, placements)
+    return _original_linear(input, weight, bias)
+
+
+F.linear = patched_linear
+
 
 ########################################################################
 # 1. Define the same Net class
@@ -20,27 +67,24 @@ from torch.distributed.tensor import distribute_tensor, Replicate
 class Net(nn.Module):
     def __init__(self):
         super(Net, self).__init__()
-        self.conv1 = nn.Conv2d(in_channels=1, out_channels=32, kernel_size=4, stride=4)
-        self.conv2 = nn.Conv2d(in_channels=32, out_channels=64, kernel_size=4, stride=4)
-        self.dropout1 = nn.Dropout(0.25)
-        self.dropout2 = nn.Dropout(0.5)
-        self.fc1 = nn.Linear(64, 128)
-        self.fc2 = nn.Linear(128, 10)
+        # Use kernel_size=2 and stride=2, with no padding, which meets the tensor parallel requirements.
+        # For a 28x28 input, the first conv produces an output of size: (28 - 2) / 2 + 1 = 14.
+        self.conv1 = nn.Conv2d(
+            in_channels=1, out_channels=16, kernel_size=2, stride=2, padding=0
+        )
+        # Second conv: input size 14 -> (14 - 2) / 2 + 1 = 7.
+        self.conv2 = nn.Conv2d(
+            in_channels=16, out_channels=32, kernel_size=2, stride=2, padding=0
+        )
+        # After conv2, the feature map is 32 channels of 7x7, so flattened size = 32*7*7 = 1568.
+        self.fc = nn.Linear(1568, 10)
 
     def forward(self, x):
-        x = self.conv1(x)
-        x = F.relu(x)
-        x = self.conv2(x)
-        x = F.relu(x)
-        x = F.max_pool2d(x, 2)
-        x = self.dropout1(x)
+        x = F.relu(self.conv1(x))
+        x = F.relu(self.conv2(x))
         x = torch.flatten(x, 1)
-        x = self.fc1(x)
-        x = F.relu(x)
-        x = self.dropout2(x)
-        x = self.fc2(x)
-        output = F.log_softmax(x, dim=1)
-        return output
+        x = self.fc(x)
+        return F.log_softmax(x, dim=1)
 
 
 ########################################################################
@@ -51,6 +95,8 @@ class Net(nn.Module):
 #    - Compiles model with torch.compile
 #    - Runs a forward pass on dummy input
 ########################################################################
+
+
 def fsdp_demo(rank, world_size):
     try:
         os.environ["MASTER_ADDR"] = "localhost"
@@ -80,31 +126,21 @@ def fsdp_demo(rank, world_size):
             device_mesh=mesh,
             mode="replicate",
             reshard_after_forward=True,
-            mp_policy=mp_policy
+            mp_policy=mp_policy,
         )
-
         # 2f. Compile the FSDP-wrapped model
-        # compiled_model = torch.compile(fsdp_model)
-        compiled_model = fsdp_model
-
+        compiled_model = torch.compile(fsdp_model)
+        # compiled_model = fsdp_model
 
         # 2g. Dummy input of shape (batch=1, channel=1, 28x28)
-        dummy_input = torch.randn(1, 1, 32, 32, device=device)
+        dummy_input = torch.randn(1, 1, 28, 28, device=device)
         dummy_input_dt = distribute_tensor(
             dummy_input,
-            device_mesh=mesh,         # The same mesh you used for the model
-            placements=[Replicate()]  # Typically replicate the input across each rank
+            device_mesh=mesh,  # The same mesh you used for the model
+            placements=[Replicate()],  # Typically replicate the input across each rank
         )
-
-        # 2h. Forward pass
-        with torch.no_grad():
+        with enable_active_parametrization():
             output = compiled_model(dummy_input_dt)
-
-        # 2i. Print result only on rank 0
-        if rank == 0:
-            print(f"[Rank 0] Output shape: {output.shape}")
-            print(f"[Rank 0] Output:\n{output}")
-
         # 2j. Cleanup
         dist.destroy_process_group()
     except Exception as e:
