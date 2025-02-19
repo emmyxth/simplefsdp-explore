@@ -1,0 +1,570 @@
+torch.cuda.device_count(): 2
+[rank0]:V0219 05:54:56.635000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [0/0_1] [__graph_code] TRACED GRAPH
+[rank0]:V0219 05:54:56.635000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [0/0_1] [__graph_code]  ===== pre insert_deferred_runtime_asserts __compiled_fn_2 =====
+[rank0]:V0219 05:54:56.635000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [0/0_1] [__graph_code]  <eval_with_key>.0 class GraphModule(torch.nn.Module):
+[rank0]:V0219 05:54:56.635000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [0/0_1] [__graph_code]     def forward(self, L_self_modules_conv1_parameters_weight_: "f32[16, 1, 2, 2]", L_self_modules_conv1_parameters_bias_: "f32[16]", L_x_: "f32[1, 1, 28, 28]", L_x_local_tensor: "f32[1, 1, 28, 28]"):
+[rank0]:V0219 05:54:56.635000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [0/0_1] [__graph_code]         l_self_modules_conv1_parameters_weight_ = L_self_modules_conv1_parameters_weight_
+[rank0]:V0219 05:54:56.635000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [0/0_1] [__graph_code]         l_self_modules_conv1_parameters_bias_ = L_self_modules_conv1_parameters_bias_
+[rank0]:V0219 05:54:56.635000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [0/0_1] [__graph_code]         l_x_ = L_x_
+[rank0]:V0219 05:54:56.635000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [0/0_1] [__graph_code]         l_x_local_tensor = L_x_local_tensor
+[rank0]:V0219 05:54:56.635000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [0/0_1] [__graph_code]         
+[rank0]:V0219 05:54:56.635000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [0/0_1] [__graph_code]          # File: /home/user/run-basic.py:39 in patched_conv2d, code: weight = DTensor.from_local(weight, mesh, placements)
+[rank0]:V0219 05:54:56.635000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [0/0_1] [__graph_code]         weight: "f32[16, 1, 2, 2]" = torch__dynamo_variables_torch_prim_from_local(l_self_modules_conv1_parameters_weight_);  l_self_modules_conv1_parameters_weight_ = None
+[rank0]:V0219 05:54:56.635000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [0/0_1] [__graph_code]         
+[rank0]:V0219 05:54:56.635000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [0/0_1] [__graph_code]          # File: /home/user/run-basic.py:41 in patched_conv2d, code: bias = DTensor.from_local(bias, mesh, placements)
+[rank0]:V0219 05:54:56.635000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [0/0_1] [__graph_code]         bias: "f32[16]" = torch__dynamo_variables_torch_prim_from_local_1(l_self_modules_conv1_parameters_bias_);  l_self_modules_conv1_parameters_bias_ = None
+[rank0]:V0219 05:54:56.635000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [0/0_1] [__graph_code]         
+[rank0]:V0219 05:54:56.635000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [0/0_1] [__graph_code]          # File: /home/user/run-basic.py:42 in patched_conv2d, code: return _original_conv2d(input, weight, bias, stride, padding, dilation, groups)
+[rank0]:V0219 05:54:56.635000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [0/0_1] [__graph_code]         conv2d: "f32[1, 16, 14, 14]" = torch.conv2d(l_x_, weight, bias, (2, 2), (0, 0), (1, 1), 1);  l_x_ = weight = bias = None
+[rank0]:V0219 05:54:56.635000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [0/0_1] [__graph_code]         
+[rank0]:V0219 05:54:56.635000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [0/0_1] [__graph_code]          # File: /home/user/run-basic.py:84 in forward, code: x = F.relu(self.conv1(x))
+[rank0]:V0219 05:54:56.635000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [0/0_1] [__graph_code]         x: "f32[1, 16, 14, 14]" = torch.nn.functional.relu(conv2d);  conv2d = None
+[rank0]:V0219 05:54:56.635000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [0/0_1] [__graph_code]         return (x,)
+[rank0]:V0219 05:54:56.635000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [0/0_1] [__graph_code]         
+[rank0]:V0219 05:54:56.635000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [0/0_1] [__graph_code] 
+[rank0]:V0219 05:54:56.646000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [0/0_1] [__graph_code] TRACED GRAPH
+[rank0]:V0219 05:54:56.646000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [0/0_1] [__graph_code]  ===== __compiled_fn_2 =====
+[rank0]:V0219 05:54:56.646000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [0/0_1] [__graph_code]  /home/user/.local/lib/python3.10/site-packages/torch/fx/_lazy_graph_module.py class GraphModule(torch.nn.Module):
+[rank0]:V0219 05:54:56.646000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [0/0_1] [__graph_code]     def forward(self, L_self_modules_conv1_parameters_weight_: "f32[16, 1, 2, 2][4, 4, 2, 1]cuda:0", L_self_modules_conv1_parameters_bias_: "f32[16][1]cuda:0", L_x_: "f32[1, 1, 28, 28][784, 784, 28, 1]cuda:0"):
+[rank0]:V0219 05:54:56.646000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [0/0_1] [__graph_code]         l_self_modules_conv1_parameters_weight_ = L_self_modules_conv1_parameters_weight_
+[rank0]:V0219 05:54:56.646000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [0/0_1] [__graph_code]         l_self_modules_conv1_parameters_bias_ = L_self_modules_conv1_parameters_bias_
+[rank0]:V0219 05:54:56.646000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [0/0_1] [__graph_code]         l_x_ = L_x_
+[rank0]:V0219 05:54:56.646000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [0/0_1] [__graph_code]         
+[rank0]:V0219 05:54:56.646000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [0/0_1] [__graph_code]          # File: /home/user/run-basic.py:39 in patched_conv2d, code: weight = DTensor.from_local(weight, mesh, placements)
+[rank0]:V0219 05:54:56.646000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [0/0_1] [__graph_code]         weight: "f32[16, 1, 2, 2][4, 4, 2, 1]cuda:0" = torch__dynamo_variables_torch_prim_from_local(l_self_modules_conv1_parameters_weight_);  l_self_modules_conv1_parameters_weight_ = None
+[rank0]:V0219 05:54:56.646000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [0/0_1] [__graph_code]         
+[rank0]:V0219 05:54:56.646000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [0/0_1] [__graph_code]          # File: /home/user/run-basic.py:41 in patched_conv2d, code: bias = DTensor.from_local(bias, mesh, placements)
+[rank0]:V0219 05:54:56.646000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [0/0_1] [__graph_code]         bias: "f32[16][1]cuda:0" = torch__dynamo_variables_torch_prim_from_local_1(l_self_modules_conv1_parameters_bias_);  l_self_modules_conv1_parameters_bias_ = None
+[rank0]:V0219 05:54:56.646000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [0/0_1] [__graph_code]         
+[rank0]:V0219 05:54:56.646000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [0/0_1] [__graph_code]          # File: /home/user/run-basic.py:42 in patched_conv2d, code: return _original_conv2d(input, weight, bias, stride, padding, dilation, groups)
+[rank0]:V0219 05:54:56.646000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [0/0_1] [__graph_code]         conv2d: "f32[1, 16, 14, 14][3136, 196, 14, 1]cuda:0" = torch.conv2d(l_x_, weight, bias, (2, 2), (0, 0), (1, 1), 1);  l_x_ = weight = bias = None
+[rank0]:V0219 05:54:56.646000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [0/0_1] [__graph_code]         
+[rank0]:V0219 05:54:56.646000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [0/0_1] [__graph_code]          # File: /home/user/run-basic.py:84 in forward, code: x = F.relu(self.conv1(x))
+[rank0]:V0219 05:54:56.646000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [0/0_1] [__graph_code]         x: "f32[1, 16, 14, 14][3136, 196, 14, 1]cuda:0" = torch.nn.functional.relu(conv2d);  conv2d = None
+[rank0]:V0219 05:54:56.646000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [0/0_1] [__graph_code]         return (x,)
+[rank0]:V0219 05:54:56.646000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [0/0_1] [__graph_code]         
+[rank0]:V0219 05:54:56.646000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [0/0_1] [__graph_code] 
+[rank1]:V0219 05:54:56.653000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [0/0_1] [__graph_code] TRACED GRAPH
+[rank1]:V0219 05:54:56.653000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [0/0_1] [__graph_code]  ===== pre insert_deferred_runtime_asserts __compiled_fn_2 =====
+[rank1]:V0219 05:54:56.653000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [0/0_1] [__graph_code]  <eval_with_key>.0 class GraphModule(torch.nn.Module):
+[rank1]:V0219 05:54:56.653000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [0/0_1] [__graph_code]     def forward(self, L_self_modules_conv1_parameters_weight_: "f32[16, 1, 2, 2]", L_self_modules_conv1_parameters_bias_: "f32[16]", L_x_: "f32[1, 1, 28, 28]", L_x_local_tensor: "f32[1, 1, 28, 28]"):
+[rank1]:V0219 05:54:56.653000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [0/0_1] [__graph_code]         l_self_modules_conv1_parameters_weight_ = L_self_modules_conv1_parameters_weight_
+[rank1]:V0219 05:54:56.653000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [0/0_1] [__graph_code]         l_self_modules_conv1_parameters_bias_ = L_self_modules_conv1_parameters_bias_
+[rank1]:V0219 05:54:56.653000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [0/0_1] [__graph_code]         l_x_ = L_x_
+[rank1]:V0219 05:54:56.653000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [0/0_1] [__graph_code]         l_x_local_tensor = L_x_local_tensor
+[rank1]:V0219 05:54:56.653000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [0/0_1] [__graph_code]         
+[rank1]:V0219 05:54:56.653000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [0/0_1] [__graph_code]          # File: /home/user/run-basic.py:39 in patched_conv2d, code: weight = DTensor.from_local(weight, mesh, placements)
+[rank1]:V0219 05:54:56.653000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [0/0_1] [__graph_code]         weight: "f32[16, 1, 2, 2]" = torch__dynamo_variables_torch_prim_from_local(l_self_modules_conv1_parameters_weight_);  l_self_modules_conv1_parameters_weight_ = None
+[rank1]:V0219 05:54:56.653000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [0/0_1] [__graph_code]         
+[rank1]:V0219 05:54:56.653000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [0/0_1] [__graph_code]          # File: /home/user/run-basic.py:41 in patched_conv2d, code: bias = DTensor.from_local(bias, mesh, placements)
+[rank1]:V0219 05:54:56.653000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [0/0_1] [__graph_code]         bias: "f32[16]" = torch__dynamo_variables_torch_prim_from_local_1(l_self_modules_conv1_parameters_bias_);  l_self_modules_conv1_parameters_bias_ = None
+[rank1]:V0219 05:54:56.653000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [0/0_1] [__graph_code]         
+[rank1]:V0219 05:54:56.653000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [0/0_1] [__graph_code]          # File: /home/user/run-basic.py:42 in patched_conv2d, code: return _original_conv2d(input, weight, bias, stride, padding, dilation, groups)
+[rank1]:V0219 05:54:56.653000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [0/0_1] [__graph_code]         conv2d: "f32[1, 16, 14, 14]" = torch.conv2d(l_x_, weight, bias, (2, 2), (0, 0), (1, 1), 1);  l_x_ = weight = bias = None
+[rank1]:V0219 05:54:56.653000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [0/0_1] [__graph_code]         
+[rank1]:V0219 05:54:56.653000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [0/0_1] [__graph_code]          # File: /home/user/run-basic.py:84 in forward, code: x = F.relu(self.conv1(x))
+[rank1]:V0219 05:54:56.653000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [0/0_1] [__graph_code]         x: "f32[1, 16, 14, 14]" = torch.nn.functional.relu(conv2d);  conv2d = None
+[rank1]:V0219 05:54:56.653000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [0/0_1] [__graph_code]         return (x,)
+[rank1]:V0219 05:54:56.653000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [0/0_1] [__graph_code]         
+[rank1]:V0219 05:54:56.653000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [0/0_1] [__graph_code] 
+[rank1]:V0219 05:54:56.656000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [0/0_1] [__graph_code] TRACED GRAPH
+[rank1]:V0219 05:54:56.656000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [0/0_1] [__graph_code]  ===== __compiled_fn_2 =====
+[rank1]:V0219 05:54:56.656000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [0/0_1] [__graph_code]  /home/user/.local/lib/python3.10/site-packages/torch/fx/_lazy_graph_module.py class GraphModule(torch.nn.Module):
+[rank1]:V0219 05:54:56.656000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [0/0_1] [__graph_code]     def forward(self, L_self_modules_conv1_parameters_weight_: "f32[16, 1, 2, 2][4, 4, 2, 1]cuda:1", L_self_modules_conv1_parameters_bias_: "f32[16][1]cuda:1", L_x_: "f32[1, 1, 28, 28][784, 784, 28, 1]cuda:1"):
+[rank1]:V0219 05:54:56.656000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [0/0_1] [__graph_code]         l_self_modules_conv1_parameters_weight_ = L_self_modules_conv1_parameters_weight_
+[rank1]:V0219 05:54:56.656000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [0/0_1] [__graph_code]         l_self_modules_conv1_parameters_bias_ = L_self_modules_conv1_parameters_bias_
+[rank1]:V0219 05:54:56.656000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [0/0_1] [__graph_code]         l_x_ = L_x_
+[rank1]:V0219 05:54:56.656000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [0/0_1] [__graph_code]         
+[rank1]:V0219 05:54:56.656000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [0/0_1] [__graph_code]          # File: /home/user/run-basic.py:39 in patched_conv2d, code: weight = DTensor.from_local(weight, mesh, placements)
+[rank1]:V0219 05:54:56.656000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [0/0_1] [__graph_code]         weight: "f32[16, 1, 2, 2][4, 4, 2, 1]cuda:1" = torch__dynamo_variables_torch_prim_from_local(l_self_modules_conv1_parameters_weight_);  l_self_modules_conv1_parameters_weight_ = None
+[rank1]:V0219 05:54:56.656000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [0/0_1] [__graph_code]         
+[rank1]:V0219 05:54:56.656000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [0/0_1] [__graph_code]          # File: /home/user/run-basic.py:41 in patched_conv2d, code: bias = DTensor.from_local(bias, mesh, placements)
+[rank1]:V0219 05:54:56.656000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [0/0_1] [__graph_code]         bias: "f32[16][1]cuda:1" = torch__dynamo_variables_torch_prim_from_local_1(l_self_modules_conv1_parameters_bias_);  l_self_modules_conv1_parameters_bias_ = None
+[rank1]:V0219 05:54:56.656000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [0/0_1] [__graph_code]         
+[rank1]:V0219 05:54:56.656000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [0/0_1] [__graph_code]          # File: /home/user/run-basic.py:42 in patched_conv2d, code: return _original_conv2d(input, weight, bias, stride, padding, dilation, groups)
+[rank1]:V0219 05:54:56.656000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [0/0_1] [__graph_code]         conv2d: "f32[1, 16, 14, 14][3136, 196, 14, 1]cuda:1" = torch.conv2d(l_x_, weight, bias, (2, 2), (0, 0), (1, 1), 1);  l_x_ = weight = bias = None
+[rank1]:V0219 05:54:56.656000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [0/0_1] [__graph_code]         
+[rank1]:V0219 05:54:56.656000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [0/0_1] [__graph_code]          # File: /home/user/run-basic.py:84 in forward, code: x = F.relu(self.conv1(x))
+[rank1]:V0219 05:54:56.656000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [0/0_1] [__graph_code]         x: "f32[1, 16, 14, 14][3136, 196, 14, 1]cuda:1" = torch.nn.functional.relu(conv2d);  conv2d = None
+[rank1]:V0219 05:54:56.656000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [0/0_1] [__graph_code]         return (x,)
+[rank1]:V0219 05:54:56.656000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [0/0_1] [__graph_code]         
+[rank1]:V0219 05:54:56.656000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [0/0_1] [__graph_code] 
+class GraphModule(torch.nn.Module):
+    def forward(self, L_self_modules_conv1_parameters_weight_: "f32[16, 1, 2, 2]", L_self_modules_conv1_parameters_bias_: "f32[16]", L_x_: "f32[1, 1, 28, 28]"):
+        l_self_modules_conv1_parameters_weight_ = L_self_modules_conv1_parameters_weight_
+        l_self_modules_conv1_parameters_bias_ = L_self_modules_conv1_parameters_bias_
+        l_x_ = L_x_
+        
+         # File: /home/user/run-basic.py:39 in patched_conv2d, code: weight = DTensor.from_local(weight, mesh, placements)
+        weight: "f32[16, 1, 2, 2]" = torch__dynamo_variables_torch_prim_from_local(l_self_modules_conv1_parameters_weight_);  l_self_modules_conv1_parameters_weight_ = None
+        
+         # File: /home/user/run-basic.py:41 in patched_conv2d, code: bias = DTensor.from_local(bias, mesh, placements)
+        bias: "f32[16]" = torch__dynamo_variables_torch_prim_from_local_1(l_self_modules_conv1_parameters_bias_);  l_self_modules_conv1_parameters_bias_ = None
+        
+         # File: /home/user/run-basic.py:42 in patched_conv2d, code: return _original_conv2d(input, weight, bias, stride, padding, dilation, groups)
+        conv2d: "f32[1, 16, 14, 14]" = torch.conv2d(l_x_, weight, bias, (2, 2), (0, 0), (1, 1), 1);  l_x_ = weight = bias = None
+        
+         # File: /home/user/run-basic.py:84 in forward, code: x = F.relu(self.conv1(x))
+        x: "f32[1, 16, 14, 14]" = torch.nn.functional.relu(conv2d);  conv2d = None
+        return (x,)
+        
+class GraphModule(torch.nn.Module):
+    def forward(self, L_self_modules_conv1_parameters_weight_: "f32[16, 1, 2, 2]", L_self_modules_conv1_parameters_bias_: "f32[16]", L_x_: "f32[1, 1, 28, 28]"):
+        l_self_modules_conv1_parameters_weight_ = L_self_modules_conv1_parameters_weight_
+        l_self_modules_conv1_parameters_bias_ = L_self_modules_conv1_parameters_bias_
+        l_x_ = L_x_
+        
+         # File: /home/user/run-basic.py:39 in patched_conv2d, code: weight = DTensor.from_local(weight, mesh, placements)
+        weight: "f32[16, 1, 2, 2]" = torch__dynamo_variables_torch_prim_from_local(l_self_modules_conv1_parameters_weight_);  l_self_modules_conv1_parameters_weight_ = None
+        
+         # File: /home/user/run-basic.py:41 in patched_conv2d, code: bias = DTensor.from_local(bias, mesh, placements)
+        bias: "f32[16]" = torch__dynamo_variables_torch_prim_from_local_1(l_self_modules_conv1_parameters_bias_);  l_self_modules_conv1_parameters_bias_ = None
+        
+         # File: /home/user/run-basic.py:42 in patched_conv2d, code: return _original_conv2d(input, weight, bias, stride, padding, dilation, groups)
+        conv2d: "f32[1, 16, 14, 14]" = torch.conv2d(l_x_, weight, bias, (2, 2), (0, 0), (1, 1), 1);  l_x_ = weight = bias = None
+        
+         # File: /home/user/run-basic.py:84 in forward, code: x = F.relu(self.conv1(x))
+        x: "f32[1, 16, 14, 14]" = torch.nn.functional.relu(conv2d);  conv2d = None
+        return (x,)
+        
+opcode         name                                     target                                                                                                                          args                                             kwargs
+-------------  ---------------------------------------  ------------------------------------------------------------------------------------------------------------------------------  -----------------------------------------------  --------
+placeholder    l_self_modules_conv1_parameters_weight_  L_self_modules_conv1_parameters_weight_                                                                                         ()                                               {}
+placeholder    l_self_modules_conv1_parameters_bias_    L_self_modules_conv1_parameters_bias_                                                                                           ()                                               {}
+placeholder    l_x_                                     L_x_                                                                                                                            ()                                               {}
+call_function  weight                                   <function TorchInGraphFunctionVariable._get_handlers.<locals>.handle_from_local.<locals>.fn_with_prim_types at 0x7fb2c00e6c20>  (l_self_modules_conv1_parameters_weight_,)       {}
+call_function  bias                                     <function TorchInGraphFunctionVariable._get_handlers.<locals>.handle_from_local.<locals>.fn_with_prim_types at 0x7fb2c06727a0>  (l_self_modules_conv1_parameters_bias_,)         {}
+call_function  conv2d                                   <built-in method conv2d of type object at 0x7fb39861fec0>                                                                       (l_x_, weight, bias, (2, 2), (0, 0), (1, 1), 1)  {}
+call_function  x                                        <function relu at 0x7fb2d93272e0>                                                                                               (conv2d,)                                        {}
+output         output                                   output                                                                                                                          ((x,),)                                          {}
+opcode         name                                     target                                                                                                                          args                                             kwargs
+-------------  ---------------------------------------  ------------------------------------------------------------------------------------------------------------------------------  -----------------------------------------------  --------
+placeholder    l_self_modules_conv1_parameters_weight_  L_self_modules_conv1_parameters_weight_                                                                                         ()                                               {}
+placeholder    l_self_modules_conv1_parameters_bias_    L_self_modules_conv1_parameters_bias_                                                                                           ()                                               {}
+placeholder    l_x_                                     L_x_                                                                                                                            ()                                               {}
+call_function  weight                                   <function TorchInGraphFunctionVariable._get_handlers.<locals>.handle_from_local.<locals>.fn_with_prim_types at 0x7fc010212c20>  (l_self_modules_conv1_parameters_weight_,)       {}
+call_function  bias                                     <function TorchInGraphFunctionVariable._get_handlers.<locals>.handle_from_local.<locals>.fn_with_prim_types at 0x7fc0103467a0>  (l_self_modules_conv1_parameters_bias_,)         {}
+call_function  conv2d                                   <built-in method conv2d of type object at 0x7fc0de21fec0>                                                                       (l_x_, weight, bias, (2, 2), (0, 0), (1, 1), 1)  {}
+call_function  x                                        <function relu at 0x7fc01ef272e0>                                                                                               (conv2d,)                                        {}
+output         output                                   output                                                                                                                          ((x,),)                                          {}
+[rank0]:V0219 05:54:57.053000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [1/0] [__graph_code] TRACED GRAPH
+[rank0]:V0219 05:54:57.053000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [1/0] [__graph_code]  ===== pre insert_deferred_runtime_asserts __compiled_fn_5 =====
+[rank0]:V0219 05:54:57.053000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [1/0] [__graph_code]  <eval_with_key>.2 class GraphModule(torch.nn.Module):
+[rank0]:V0219 05:54:57.053000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [1/0] [__graph_code]     def forward(self, L_input_: "f32[1, 16, 14, 14]", L_input_local_tensor: "f32[1, 16, 14, 14]", L_weight_: "f32[32, 16, 2, 2]", L_bias_: "f32[32]"):
+[rank0]:V0219 05:54:57.053000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [1/0] [__graph_code]         l_input_ = L_input_
+[rank0]:V0219 05:54:57.053000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [1/0] [__graph_code]         l_input_local_tensor = L_input_local_tensor
+[rank0]:V0219 05:54:57.053000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [1/0] [__graph_code]         l_weight_ = L_weight_
+[rank0]:V0219 05:54:57.053000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [1/0] [__graph_code]         l_bias_ = L_bias_
+[rank0]:V0219 05:54:57.053000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [1/0] [__graph_code]         
+[rank0]:V0219 05:54:57.053000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [1/0] [__graph_code]          # File: /home/user/run-basic.py:39 in patched_conv2d, code: weight = DTensor.from_local(weight, mesh, placements)
+[rank0]:V0219 05:54:57.053000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [1/0] [__graph_code]         weight: "f32[32, 16, 2, 2]" = torch__dynamo_variables_torch_prim_from_local(l_weight_);  l_weight_ = None
+[rank0]:V0219 05:54:57.053000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [1/0] [__graph_code]         
+[rank0]:V0219 05:54:57.053000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [1/0] [__graph_code]          # File: /home/user/run-basic.py:41 in patched_conv2d, code: bias = DTensor.from_local(bias, mesh, placements)
+[rank0]:V0219 05:54:57.053000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [1/0] [__graph_code]         bias: "f32[32]" = torch__dynamo_variables_torch_prim_from_local_1(l_bias_);  l_bias_ = None
+[rank0]:V0219 05:54:57.053000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [1/0] [__graph_code]         
+[rank0]:V0219 05:54:57.053000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [1/0] [__graph_code]          # File: /home/user/run-basic.py:42 in patched_conv2d, code: return _original_conv2d(input, weight, bias, stride, padding, dilation, groups)
+[rank0]:V0219 05:54:57.053000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [1/0] [__graph_code]         conv2d: "f32[1, 32, 7, 7]" = torch.conv2d(l_input_, weight, bias, (2, 2), (0, 0), (1, 1), 1);  l_input_ = weight = bias = None
+[rank0]:V0219 05:54:57.053000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [1/0] [__graph_code]         return (conv2d,)
+[rank0]:V0219 05:54:57.053000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [1/0] [__graph_code]         
+[rank0]:V0219 05:54:57.053000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [1/0] [__graph_code] 
+[rank0]:V0219 05:54:57.054000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [1/0] [__graph_code] TRACED GRAPH
+[rank0]:V0219 05:54:57.054000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [1/0] [__graph_code]  ===== __compiled_fn_5 =====
+[rank0]:V0219 05:54:57.054000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [1/0] [__graph_code]  /home/user/.local/lib/python3.10/site-packages/torch/fx/_lazy_graph_module.py class GraphModule(torch.nn.Module):
+[rank0]:V0219 05:54:57.054000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [1/0] [__graph_code]     def forward(self, L_input_: "f32[1, 16, 14, 14][3136, 196, 14, 1]cuda:0", L_weight_: "f32[32, 16, 2, 2][64, 4, 2, 1]cuda:0", L_bias_: "f32[32][1]cuda:0"):
+[rank0]:V0219 05:54:57.054000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [1/0] [__graph_code]         l_input_ = L_input_
+[rank0]:V0219 05:54:57.054000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [1/0] [__graph_code]         l_weight_ = L_weight_
+[rank0]:V0219 05:54:57.054000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [1/0] [__graph_code]         l_bias_ = L_bias_
+[rank0]:V0219 05:54:57.054000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [1/0] [__graph_code]         
+[rank0]:V0219 05:54:57.054000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [1/0] [__graph_code]          # File: /home/user/run-basic.py:39 in patched_conv2d, code: weight = DTensor.from_local(weight, mesh, placements)
+[rank0]:V0219 05:54:57.054000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [1/0] [__graph_code]         weight: "f32[32, 16, 2, 2][64, 4, 2, 1]cuda:0" = torch__dynamo_variables_torch_prim_from_local(l_weight_);  l_weight_ = None
+[rank0]:V0219 05:54:57.054000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [1/0] [__graph_code]         
+[rank0]:V0219 05:54:57.054000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [1/0] [__graph_code]          # File: /home/user/run-basic.py:41 in patched_conv2d, code: bias = DTensor.from_local(bias, mesh, placements)
+[rank0]:V0219 05:54:57.054000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [1/0] [__graph_code]         bias: "f32[32][1]cuda:0" = torch__dynamo_variables_torch_prim_from_local_1(l_bias_);  l_bias_ = None
+[rank0]:V0219 05:54:57.054000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [1/0] [__graph_code]         
+[rank0]:V0219 05:54:57.054000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [1/0] [__graph_code]          # File: /home/user/run-basic.py:42 in patched_conv2d, code: return _original_conv2d(input, weight, bias, stride, padding, dilation, groups)
+[rank0]:V0219 05:54:57.054000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [1/0] [__graph_code]         conv2d: "f32[1, 32, 7, 7][1568, 49, 7, 1]cuda:0" = torch.conv2d(l_input_, weight, bias, (2, 2), (0, 0), (1, 1), 1);  l_input_ = weight = bias = None
+[rank0]:V0219 05:54:57.054000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [1/0] [__graph_code]         return (conv2d,)
+[rank0]:V0219 05:54:57.054000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [1/0] [__graph_code]         
+[rank0]:V0219 05:54:57.054000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [1/0] [__graph_code] 
+class GraphModule(torch.nn.Module):
+    def forward(self, L_input_: "f32[1, 16, 14, 14]", L_weight_: "f32[32, 16, 2, 2]", L_bias_: "f32[32]"):
+        l_input_ = L_input_
+        l_weight_ = L_weight_
+        l_bias_ = L_bias_
+        
+         # File: /home/user/run-basic.py:39 in patched_conv2d, code: weight = DTensor.from_local(weight, mesh, placements)
+        weight: "f32[32, 16, 2, 2]" = torch__dynamo_variables_torch_prim_from_local(l_weight_);  l_weight_ = None
+        
+         # File: /home/user/run-basic.py:41 in patched_conv2d, code: bias = DTensor.from_local(bias, mesh, placements)
+        bias: "f32[32]" = torch__dynamo_variables_torch_prim_from_local_1(l_bias_);  l_bias_ = None
+        
+         # File: /home/user/run-basic.py:42 in patched_conv2d, code: return _original_conv2d(input, weight, bias, stride, padding, dilation, groups)
+        conv2d: "f32[1, 32, 7, 7]" = torch.conv2d(l_input_, weight, bias, (2, 2), (0, 0), (1, 1), 1);  l_input_ = weight = bias = None
+        return (conv2d,)
+        
+opcode         name       target                                                                                                                          args                                                 kwargs
+-------------  ---------  ------------------------------------------------------------------------------------------------------------------------------  ---------------------------------------------------  --------
+placeholder    l_input_   L_input_                                                                                                                        ()                                                   {}
+placeholder    l_weight_  L_weight_                                                                                                                       ()                                                   {}
+placeholder    l_bias_    L_bias_                                                                                                                         ()                                                   {}
+call_function  weight     <function TorchInGraphFunctionVariable._get_handlers.<locals>.handle_from_local.<locals>.fn_with_prim_types at 0x7fc01310fb50>  (l_weight_,)                                         {}
+call_function  bias       <function TorchInGraphFunctionVariable._get_handlers.<locals>.handle_from_local.<locals>.fn_with_prim_types at 0x7fc0081da320>  (l_bias_,)                                           {}
+call_function  conv2d     <built-in method conv2d of type object at 0x7fc0de21fec0>                                                                       (l_input_, weight, bias, (2, 2), (0, 0), (1, 1), 1)  {}
+output         output     output                                                                                                                          ((conv2d,),)                                         {}
+[rank1]:V0219 05:54:57.082000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [1/0] [__graph_code] TRACED GRAPH
+[rank1]:V0219 05:54:57.082000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [1/0] [__graph_code]  ===== pre insert_deferred_runtime_asserts __compiled_fn_5 =====
+[rank1]:V0219 05:54:57.082000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [1/0] [__graph_code]  <eval_with_key>.2 class GraphModule(torch.nn.Module):
+[rank1]:V0219 05:54:57.082000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [1/0] [__graph_code]     def forward(self, L_input_: "f32[1, 16, 14, 14]", L_input_local_tensor: "f32[1, 16, 14, 14]", L_weight_: "f32[32, 16, 2, 2]", L_bias_: "f32[32]"):
+[rank1]:V0219 05:54:57.082000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [1/0] [__graph_code]         l_input_ = L_input_
+[rank1]:V0219 05:54:57.082000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [1/0] [__graph_code]         l_input_local_tensor = L_input_local_tensor
+[rank1]:V0219 05:54:57.082000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [1/0] [__graph_code]         l_weight_ = L_weight_
+[rank1]:V0219 05:54:57.082000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [1/0] [__graph_code]         l_bias_ = L_bias_
+[rank1]:V0219 05:54:57.082000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [1/0] [__graph_code]         
+[rank1]:V0219 05:54:57.082000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [1/0] [__graph_code]          # File: /home/user/run-basic.py:39 in patched_conv2d, code: weight = DTensor.from_local(weight, mesh, placements)
+[rank1]:V0219 05:54:57.082000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [1/0] [__graph_code]         weight: "f32[32, 16, 2, 2]" = torch__dynamo_variables_torch_prim_from_local(l_weight_);  l_weight_ = None
+[rank1]:V0219 05:54:57.082000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [1/0] [__graph_code]         
+[rank1]:V0219 05:54:57.082000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [1/0] [__graph_code]          # File: /home/user/run-basic.py:41 in patched_conv2d, code: bias = DTensor.from_local(bias, mesh, placements)
+[rank1]:V0219 05:54:57.082000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [1/0] [__graph_code]         bias: "f32[32]" = torch__dynamo_variables_torch_prim_from_local_1(l_bias_);  l_bias_ = None
+[rank1]:V0219 05:54:57.082000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [1/0] [__graph_code]         
+[rank1]:V0219 05:54:57.082000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [1/0] [__graph_code]          # File: /home/user/run-basic.py:42 in patched_conv2d, code: return _original_conv2d(input, weight, bias, stride, padding, dilation, groups)
+[rank1]:V0219 05:54:57.082000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [1/0] [__graph_code]         conv2d: "f32[1, 32, 7, 7]" = torch.conv2d(l_input_, weight, bias, (2, 2), (0, 0), (1, 1), 1);  l_input_ = weight = bias = None
+[rank1]:V0219 05:54:57.082000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [1/0] [__graph_code]         return (conv2d,)
+[rank1]:V0219 05:54:57.082000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [1/0] [__graph_code]         
+[rank1]:V0219 05:54:57.082000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [1/0] [__graph_code] 
+[rank1]:V0219 05:54:57.084000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [1/0] [__graph_code] TRACED GRAPH
+[rank1]:V0219 05:54:57.084000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [1/0] [__graph_code]  ===== __compiled_fn_5 =====
+[rank1]:V0219 05:54:57.084000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [1/0] [__graph_code]  /home/user/.local/lib/python3.10/site-packages/torch/fx/_lazy_graph_module.py class GraphModule(torch.nn.Module):
+[rank1]:V0219 05:54:57.084000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [1/0] [__graph_code]     def forward(self, L_input_: "f32[1, 16, 14, 14][3136, 196, 14, 1]cuda:1", L_weight_: "f32[32, 16, 2, 2][64, 4, 2, 1]cuda:1", L_bias_: "f32[32][1]cuda:1"):
+[rank1]:V0219 05:54:57.084000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [1/0] [__graph_code]         l_input_ = L_input_
+[rank1]:V0219 05:54:57.084000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [1/0] [__graph_code]         l_weight_ = L_weight_
+[rank1]:V0219 05:54:57.084000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [1/0] [__graph_code]         l_bias_ = L_bias_
+[rank1]:V0219 05:54:57.084000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [1/0] [__graph_code]         
+[rank1]:V0219 05:54:57.084000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [1/0] [__graph_code]          # File: /home/user/run-basic.py:39 in patched_conv2d, code: weight = DTensor.from_local(weight, mesh, placements)
+[rank1]:V0219 05:54:57.084000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [1/0] [__graph_code]         weight: "f32[32, 16, 2, 2][64, 4, 2, 1]cuda:1" = torch__dynamo_variables_torch_prim_from_local(l_weight_);  l_weight_ = None
+[rank1]:V0219 05:54:57.084000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [1/0] [__graph_code]         
+[rank1]:V0219 05:54:57.084000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [1/0] [__graph_code]          # File: /home/user/run-basic.py:41 in patched_conv2d, code: bias = DTensor.from_local(bias, mesh, placements)
+[rank1]:V0219 05:54:57.084000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [1/0] [__graph_code]         bias: "f32[32][1]cuda:1" = torch__dynamo_variables_torch_prim_from_local_1(l_bias_);  l_bias_ = None
+[rank1]:V0219 05:54:57.084000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [1/0] [__graph_code]         
+[rank1]:V0219 05:54:57.084000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [1/0] [__graph_code]          # File: /home/user/run-basic.py:42 in patched_conv2d, code: return _original_conv2d(input, weight, bias, stride, padding, dilation, groups)
+[rank1]:V0219 05:54:57.084000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [1/0] [__graph_code]         conv2d: "f32[1, 32, 7, 7][1568, 49, 7, 1]cuda:1" = torch.conv2d(l_input_, weight, bias, (2, 2), (0, 0), (1, 1), 1);  l_input_ = weight = bias = None
+[rank1]:V0219 05:54:57.084000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [1/0] [__graph_code]         return (conv2d,)
+[rank1]:V0219 05:54:57.084000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [1/0] [__graph_code]         
+[rank1]:V0219 05:54:57.084000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [1/0] [__graph_code] 
+class GraphModule(torch.nn.Module):
+    def forward(self, L_input_: "f32[1, 16, 14, 14]", L_weight_: "f32[32, 16, 2, 2]", L_bias_: "f32[32]"):
+        l_input_ = L_input_
+        l_weight_ = L_weight_
+        l_bias_ = L_bias_
+        
+         # File: /home/user/run-basic.py:39 in patched_conv2d, code: weight = DTensor.from_local(weight, mesh, placements)
+        weight: "f32[32, 16, 2, 2]" = torch__dynamo_variables_torch_prim_from_local(l_weight_);  l_weight_ = None
+        
+         # File: /home/user/run-basic.py:41 in patched_conv2d, code: bias = DTensor.from_local(bias, mesh, placements)
+        bias: "f32[32]" = torch__dynamo_variables_torch_prim_from_local_1(l_bias_);  l_bias_ = None
+        
+         # File: /home/user/run-basic.py:42 in patched_conv2d, code: return _original_conv2d(input, weight, bias, stride, padding, dilation, groups)
+        conv2d: "f32[1, 32, 7, 7]" = torch.conv2d(l_input_, weight, bias, (2, 2), (0, 0), (1, 1), 1);  l_input_ = weight = bias = None
+        return (conv2d,)
+        
+opcode         name       target                                                                                                                          args                                                 kwargs
+-------------  ---------  ------------------------------------------------------------------------------------------------------------------------------  ---------------------------------------------------  --------
+placeholder    l_input_   L_input_                                                                                                                        ()                                                   {}
+placeholder    l_weight_  L_weight_                                                                                                                       ()                                                   {}
+placeholder    l_bias_    L_bias_                                                                                                                         ()                                                   {}
+call_function  weight     <function TorchInGraphFunctionVariable._get_handlers.<locals>.handle_from_local.<locals>.fn_with_prim_types at 0x7fb2cd50fb50>  (l_weight_,)                                         {}
+call_function  bias       <function TorchInGraphFunctionVariable._get_handlers.<locals>.handle_from_local.<locals>.fn_with_prim_types at 0x7fb2ac4a63b0>  (l_bias_,)                                           {}
+call_function  conv2d     <built-in method conv2d of type object at 0x7fb39861fec0>                                                                       (l_input_, weight, bias, (2, 2), (0, 0), (1, 1), 1)  {}
+output         output     output                                                                                                                          ((conv2d,),)                                         {}
+[rank0]:V0219 05:54:57.184000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [2/0_1] [__graph_code] TRACED GRAPH
+[rank0]:V0219 05:54:57.184000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [2/0_1] [__graph_code]  ===== pre insert_deferred_runtime_asserts __compiled_fn_8 =====
+[rank0]:V0219 05:54:57.184000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [2/0_1] [__graph_code]  <eval_with_key>.4 class GraphModule(torch.nn.Module):
+[rank0]:V0219 05:54:57.184000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [2/0_1] [__graph_code]     def forward(self, L_stack1_: "f32[1, 32, 7, 7]", L_stack1_local_tensor: "f32[1, 32, 7, 7]"):
+[rank0]:V0219 05:54:57.184000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [2/0_1] [__graph_code]         l_stack1_ = L_stack1_
+[rank0]:V0219 05:54:57.184000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [2/0_1] [__graph_code]         l_stack1_local_tensor = L_stack1_local_tensor
+[rank0]:V0219 05:54:57.184000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [2/0_1] [__graph_code]         
+[rank0]:V0219 05:54:57.184000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [2/0_1] [__graph_code]          # File: /home/user/run-basic.py:85 in torch_dynamo_resume_in_forward_at_85, code: x = F.relu(self.conv2(x))
+[rank0]:V0219 05:54:57.184000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [2/0_1] [__graph_code]         x: "f32[1, 32, 7, 7]" = torch.nn.functional.relu(l_stack1_);  l_stack1_ = None
+[rank0]:V0219 05:54:57.184000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [2/0_1] [__graph_code]         
+[rank0]:V0219 05:54:57.184000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [2/0_1] [__graph_code]          # File: /home/user/run-basic.py:86 in torch_dynamo_resume_in_forward_at_85, code: x = torch.flatten(x, 1)
+[rank0]:V0219 05:54:57.184000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [2/0_1] [__graph_code]         x_1: "f32[1, 1568]" = torch.flatten(x, 1);  x = None
+[rank0]:V0219 05:54:57.184000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [2/0_1] [__graph_code]         return (x_1,)
+[rank0]:V0219 05:54:57.184000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [2/0_1] [__graph_code]         
+[rank0]:V0219 05:54:57.184000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [2/0_1] [__graph_code] 
+[rank0]:V0219 05:54:57.186000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [2/0_1] [__graph_code] TRACED GRAPH
+[rank0]:V0219 05:54:57.186000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [2/0_1] [__graph_code]  ===== __compiled_fn_8 =====
+[rank0]:V0219 05:54:57.186000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [2/0_1] [__graph_code]  /home/user/.local/lib/python3.10/site-packages/torch/fx/_lazy_graph_module.py class GraphModule(torch.nn.Module):
+[rank0]:V0219 05:54:57.186000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [2/0_1] [__graph_code]     def forward(self, L_stack1_: "f32[1, 32, 7, 7][1568, 49, 7, 1]cuda:0"):
+[rank0]:V0219 05:54:57.186000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [2/0_1] [__graph_code]         l_stack1_ = L_stack1_
+[rank0]:V0219 05:54:57.186000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [2/0_1] [__graph_code]         
+[rank0]:V0219 05:54:57.186000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [2/0_1] [__graph_code]          # File: /home/user/run-basic.py:85 in torch_dynamo_resume_in_forward_at_85, code: x = F.relu(self.conv2(x))
+[rank0]:V0219 05:54:57.186000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [2/0_1] [__graph_code]         x: "f32[1, 32, 7, 7][1568, 49, 7, 1]cuda:0" = torch.nn.functional.relu(l_stack1_);  l_stack1_ = None
+[rank0]:V0219 05:54:57.186000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [2/0_1] [__graph_code]         
+[rank0]:V0219 05:54:57.186000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [2/0_1] [__graph_code]          # File: /home/user/run-basic.py:86 in torch_dynamo_resume_in_forward_at_85, code: x = torch.flatten(x, 1)
+[rank0]:V0219 05:54:57.186000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [2/0_1] [__graph_code]         x_1: "f32[1, 1568][1568, 1]cuda:0" = torch.flatten(x, 1);  x = None
+[rank0]:V0219 05:54:57.186000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [2/0_1] [__graph_code]         return (x_1,)
+[rank0]:V0219 05:54:57.186000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [2/0_1] [__graph_code]         
+[rank0]:V0219 05:54:57.186000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [2/0_1] [__graph_code] 
+class GraphModule(torch.nn.Module):
+    def forward(self, L_stack1_: "f32[1, 32, 7, 7]"):
+        l_stack1_ = L_stack1_
+        
+         # File: /home/user/run-basic.py:85 in torch_dynamo_resume_in_forward_at_85, code: x = F.relu(self.conv2(x))
+        x: "f32[1, 32, 7, 7]" = torch.nn.functional.relu(l_stack1_);  l_stack1_ = None
+        
+         # File: /home/user/run-basic.py:86 in torch_dynamo_resume_in_forward_at_85, code: x = torch.flatten(x, 1)
+        x_1: "f32[1, 1568]" = torch.flatten(x, 1);  x = None
+        return (x_1,)
+        
+opcode         name       target                                                      args          kwargs
+-------------  ---------  ----------------------------------------------------------  ------------  --------
+placeholder    l_stack1_  L_stack1_                                                   ()            {}
+call_function  x          <function relu at 0x7fc01ef272e0>                           (l_stack1_,)  {}
+call_function  x_1        <built-in method flatten of type object at 0x7fc0de21fec0>  (x, 1)        {}
+output         output     output                                                      ((x_1,),)     {}
+[rank1]:V0219 05:54:57.214000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [2/0_1] [__graph_code] TRACED GRAPH
+[rank1]:V0219 05:54:57.214000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [2/0_1] [__graph_code]  ===== pre insert_deferred_runtime_asserts __compiled_fn_8 =====
+[rank1]:V0219 05:54:57.214000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [2/0_1] [__graph_code]  <eval_with_key>.4 class GraphModule(torch.nn.Module):
+[rank1]:V0219 05:54:57.214000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [2/0_1] [__graph_code]     def forward(self, L_stack1_: "f32[1, 32, 7, 7]", L_stack1_local_tensor: "f32[1, 32, 7, 7]"):
+[rank1]:V0219 05:54:57.214000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [2/0_1] [__graph_code]         l_stack1_ = L_stack1_
+[rank1]:V0219 05:54:57.214000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [2/0_1] [__graph_code]         l_stack1_local_tensor = L_stack1_local_tensor
+[rank1]:V0219 05:54:57.214000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [2/0_1] [__graph_code]         
+[rank1]:V0219 05:54:57.214000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [2/0_1] [__graph_code]          # File: /home/user/run-basic.py:85 in torch_dynamo_resume_in_forward_at_85, code: x = F.relu(self.conv2(x))
+[rank1]:V0219 05:54:57.214000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [2/0_1] [__graph_code]         x: "f32[1, 32, 7, 7]" = torch.nn.functional.relu(l_stack1_);  l_stack1_ = None
+[rank1]:V0219 05:54:57.214000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [2/0_1] [__graph_code]         
+[rank1]:V0219 05:54:57.214000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [2/0_1] [__graph_code]          # File: /home/user/run-basic.py:86 in torch_dynamo_resume_in_forward_at_85, code: x = torch.flatten(x, 1)
+[rank1]:V0219 05:54:57.214000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [2/0_1] [__graph_code]         x_1: "f32[1, 1568]" = torch.flatten(x, 1);  x = None
+[rank1]:V0219 05:54:57.214000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [2/0_1] [__graph_code]         return (x_1,)
+[rank1]:V0219 05:54:57.214000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [2/0_1] [__graph_code]         
+[rank1]:V0219 05:54:57.214000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [2/0_1] [__graph_code] 
+[rank1]:V0219 05:54:57.217000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [2/0_1] [__graph_code] TRACED GRAPH
+[rank1]:V0219 05:54:57.217000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [2/0_1] [__graph_code]  ===== __compiled_fn_8 =====
+[rank1]:V0219 05:54:57.217000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [2/0_1] [__graph_code]  /home/user/.local/lib/python3.10/site-packages/torch/fx/_lazy_graph_module.py class GraphModule(torch.nn.Module):
+[rank1]:V0219 05:54:57.217000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [2/0_1] [__graph_code]     def forward(self, L_stack1_: "f32[1, 32, 7, 7][1568, 49, 7, 1]cuda:1"):
+[rank1]:V0219 05:54:57.217000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [2/0_1] [__graph_code]         l_stack1_ = L_stack1_
+[rank1]:V0219 05:54:57.217000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [2/0_1] [__graph_code]         
+[rank1]:V0219 05:54:57.217000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [2/0_1] [__graph_code]          # File: /home/user/run-basic.py:85 in torch_dynamo_resume_in_forward_at_85, code: x = F.relu(self.conv2(x))
+[rank1]:V0219 05:54:57.217000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [2/0_1] [__graph_code]         x: "f32[1, 32, 7, 7][1568, 49, 7, 1]cuda:1" = torch.nn.functional.relu(l_stack1_);  l_stack1_ = None
+[rank1]:V0219 05:54:57.217000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [2/0_1] [__graph_code]         
+[rank1]:V0219 05:54:57.217000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [2/0_1] [__graph_code]          # File: /home/user/run-basic.py:86 in torch_dynamo_resume_in_forward_at_85, code: x = torch.flatten(x, 1)
+[rank1]:V0219 05:54:57.217000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [2/0_1] [__graph_code]         x_1: "f32[1, 1568][1568, 1]cuda:1" = torch.flatten(x, 1);  x = None
+[rank1]:V0219 05:54:57.217000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [2/0_1] [__graph_code]         return (x_1,)
+[rank1]:V0219 05:54:57.217000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [2/0_1] [__graph_code]         
+[rank1]:V0219 05:54:57.217000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [2/0_1] [__graph_code] 
+class GraphModule(torch.nn.Module):
+    def forward(self, L_stack1_: "f32[1, 32, 7, 7]"):
+        l_stack1_ = L_stack1_
+        
+         # File: /home/user/run-basic.py:85 in torch_dynamo_resume_in_forward_at_85, code: x = F.relu(self.conv2(x))
+        x: "f32[1, 32, 7, 7]" = torch.nn.functional.relu(l_stack1_);  l_stack1_ = None
+        
+         # File: /home/user/run-basic.py:86 in torch_dynamo_resume_in_forward_at_85, code: x = torch.flatten(x, 1)
+        x_1: "f32[1, 1568]" = torch.flatten(x, 1);  x = None
+        return (x_1,)
+        
+opcode         name       target                                                      args          kwargs
+-------------  ---------  ----------------------------------------------------------  ------------  --------
+placeholder    l_stack1_  L_stack1_                                                   ()            {}
+call_function  x          <function relu at 0x7fb2d93272e0>                           (l_stack1_,)  {}
+call_function  x_1        <built-in method flatten of type object at 0x7fb39861fec0>  (x, 1)        {}
+output         output     output                                                      ((x_1,),)     {}
+[rank0]:V0219 05:54:57.288000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [3/0] [__graph_code] TRACED GRAPH
+[rank0]:V0219 05:54:57.288000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [3/0] [__graph_code]  ===== pre insert_deferred_runtime_asserts __compiled_fn_11 =====
+[rank0]:V0219 05:54:57.288000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [3/0] [__graph_code]  <eval_with_key>.6 class GraphModule(torch.nn.Module):
+[rank0]:V0219 05:54:57.288000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [3/0] [__graph_code]     def forward(self, L_input_: "f32[1, 1568]", L_input_local_tensor: "f32[1, 1568]", L_weight_: "f32[10, 1568]", L_bias_: "f32[10]"):
+[rank0]:V0219 05:54:57.288000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [3/0] [__graph_code]         l_input_ = L_input_
+[rank0]:V0219 05:54:57.288000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [3/0] [__graph_code]         l_input_local_tensor = L_input_local_tensor
+[rank0]:V0219 05:54:57.288000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [3/0] [__graph_code]         l_weight_ = L_weight_
+[rank0]:V0219 05:54:57.288000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [3/0] [__graph_code]         l_bias_ = L_bias_
+[rank0]:V0219 05:54:57.288000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [3/0] [__graph_code]         
+[rank0]:V0219 05:54:57.288000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [3/0] [__graph_code]          # File: /home/user/run-basic.py:56 in patched_linear, code: weight = DTensor.from_local(weight, mesh, placements)
+[rank0]:V0219 05:54:57.288000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [3/0] [__graph_code]         weight: "f32[10, 1568]" = torch__dynamo_variables_torch_prim_from_local(l_weight_);  l_weight_ = None
+[rank0]:V0219 05:54:57.288000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [3/0] [__graph_code]         
+[rank0]:V0219 05:54:57.288000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [3/0] [__graph_code]          # File: /home/user/run-basic.py:58 in patched_linear, code: bias = DTensor.from_local(bias, mesh, placements)
+[rank0]:V0219 05:54:57.288000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [3/0] [__graph_code]         bias: "f32[10]" = torch__dynamo_variables_torch_prim_from_local_1(l_bias_);  l_bias_ = None
+[rank0]:V0219 05:54:57.288000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [3/0] [__graph_code]         
+[rank0]:V0219 05:54:57.288000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [3/0] [__graph_code]          # File: /home/user/run-basic.py:59 in patched_linear, code: return _original_linear(input, weight, bias)
+[rank0]:V0219 05:54:57.288000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [3/0] [__graph_code]         linear: "f32[1, 10]" = torch._C._nn.linear(l_input_, weight, bias);  l_input_ = weight = bias = None
+[rank0]:V0219 05:54:57.288000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [3/0] [__graph_code]         return (linear,)
+[rank0]:V0219 05:54:57.288000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [3/0] [__graph_code]         
+[rank0]:V0219 05:54:57.288000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [3/0] [__graph_code] 
+[rank0]:V0219 05:54:57.290000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [3/0] [__graph_code] TRACED GRAPH
+[rank0]:V0219 05:54:57.290000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [3/0] [__graph_code]  ===== __compiled_fn_11 =====
+[rank0]:V0219 05:54:57.290000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [3/0] [__graph_code]  /home/user/.local/lib/python3.10/site-packages/torch/fx/_lazy_graph_module.py class GraphModule(torch.nn.Module):
+[rank0]:V0219 05:54:57.290000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [3/0] [__graph_code]     def forward(self, L_input_: "f32[1, 1568][1568, 1]cuda:0", L_weight_: "f32[10, 1568][1568, 1]cuda:0", L_bias_: "f32[10][1]cuda:0"):
+[rank0]:V0219 05:54:57.290000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [3/0] [__graph_code]         l_input_ = L_input_
+[rank0]:V0219 05:54:57.290000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [3/0] [__graph_code]         l_weight_ = L_weight_
+[rank0]:V0219 05:54:57.290000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [3/0] [__graph_code]         l_bias_ = L_bias_
+[rank0]:V0219 05:54:57.290000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [3/0] [__graph_code]         
+[rank0]:V0219 05:54:57.290000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [3/0] [__graph_code]          # File: /home/user/run-basic.py:56 in patched_linear, code: weight = DTensor.from_local(weight, mesh, placements)
+[rank0]:V0219 05:54:57.290000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [3/0] [__graph_code]         weight: "f32[10, 1568][1568, 1]cuda:0" = torch__dynamo_variables_torch_prim_from_local(l_weight_);  l_weight_ = None
+[rank0]:V0219 05:54:57.290000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [3/0] [__graph_code]         
+[rank0]:V0219 05:54:57.290000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [3/0] [__graph_code]          # File: /home/user/run-basic.py:58 in patched_linear, code: bias = DTensor.from_local(bias, mesh, placements)
+[rank0]:V0219 05:54:57.290000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [3/0] [__graph_code]         bias: "f32[10][1]cuda:0" = torch__dynamo_variables_torch_prim_from_local_1(l_bias_);  l_bias_ = None
+[rank0]:V0219 05:54:57.290000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [3/0] [__graph_code]         
+[rank0]:V0219 05:54:57.290000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [3/0] [__graph_code]          # File: /home/user/run-basic.py:59 in patched_linear, code: return _original_linear(input, weight, bias)
+[rank0]:V0219 05:54:57.290000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [3/0] [__graph_code]         linear: "f32[1, 10][10, 1]cuda:0" = torch._C._nn.linear(l_input_, weight, bias);  l_input_ = weight = bias = None
+[rank0]:V0219 05:54:57.290000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [3/0] [__graph_code]         return (linear,)
+[rank0]:V0219 05:54:57.290000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [3/0] [__graph_code]         
+[rank0]:V0219 05:54:57.290000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [3/0] [__graph_code] 
+class GraphModule(torch.nn.Module):
+    def forward(self, L_input_: "f32[1, 1568]", L_weight_: "f32[10, 1568]", L_bias_: "f32[10]"):
+        l_input_ = L_input_
+        l_weight_ = L_weight_
+        l_bias_ = L_bias_
+        
+         # File: /home/user/run-basic.py:56 in patched_linear, code: weight = DTensor.from_local(weight, mesh, placements)
+        weight: "f32[10, 1568]" = torch__dynamo_variables_torch_prim_from_local(l_weight_);  l_weight_ = None
+        
+         # File: /home/user/run-basic.py:58 in patched_linear, code: bias = DTensor.from_local(bias, mesh, placements)
+        bias: "f32[10]" = torch__dynamo_variables_torch_prim_from_local_1(l_bias_);  l_bias_ = None
+        
+         # File: /home/user/run-basic.py:59 in patched_linear, code: return _original_linear(input, weight, bias)
+        linear: "f32[1, 10]" = torch._C._nn.linear(l_input_, weight, bias);  l_input_ = weight = bias = None
+        return (linear,)
+        
+opcode         name       target                                                                                                                          args                      kwargs
+-------------  ---------  ------------------------------------------------------------------------------------------------------------------------------  ------------------------  --------
+placeholder    l_input_   L_input_                                                                                                                        ()                        {}
+placeholder    l_weight_  L_weight_                                                                                                                       ()                        {}
+placeholder    l_bias_    L_bias_                                                                                                                         ()                        {}
+call_function  weight     <function TorchInGraphFunctionVariable._get_handlers.<locals>.handle_from_local.<locals>.fn_with_prim_types at 0x7fc0103d0280>  (l_weight_,)              {}
+call_function  bias       <function TorchInGraphFunctionVariable._get_handlers.<locals>.handle_from_local.<locals>.fn_with_prim_types at 0x7fc008088820>  (l_bias_,)                {}
+call_function  linear     <built-in function linear>                                                                                                      (l_input_, weight, bias)  {}
+output         output     output                                                                                                                          ((linear,),)              {}
+[rank1]:V0219 05:54:57.302000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [3/0] [__graph_code] TRACED GRAPH
+[rank1]:V0219 05:54:57.302000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [3/0] [__graph_code]  ===== pre insert_deferred_runtime_asserts __compiled_fn_11 =====
+[rank1]:V0219 05:54:57.302000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [3/0] [__graph_code]  <eval_with_key>.6 class GraphModule(torch.nn.Module):
+[rank1]:V0219 05:54:57.302000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [3/0] [__graph_code]     def forward(self, L_input_: "f32[1, 1568]", L_input_local_tensor: "f32[1, 1568]", L_weight_: "f32[10, 1568]", L_bias_: "f32[10]"):
+[rank1]:V0219 05:54:57.302000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [3/0] [__graph_code]         l_input_ = L_input_
+[rank1]:V0219 05:54:57.302000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [3/0] [__graph_code]         l_input_local_tensor = L_input_local_tensor
+[rank1]:V0219 05:54:57.302000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [3/0] [__graph_code]         l_weight_ = L_weight_
+[rank1]:V0219 05:54:57.302000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [3/0] [__graph_code]         l_bias_ = L_bias_
+[rank1]:V0219 05:54:57.302000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [3/0] [__graph_code]         
+[rank1]:V0219 05:54:57.302000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [3/0] [__graph_code]          # File: /home/user/run-basic.py:56 in patched_linear, code: weight = DTensor.from_local(weight, mesh, placements)
+[rank1]:V0219 05:54:57.302000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [3/0] [__graph_code]         weight: "f32[10, 1568]" = torch__dynamo_variables_torch_prim_from_local(l_weight_);  l_weight_ = None
+[rank1]:V0219 05:54:57.302000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [3/0] [__graph_code]         
+[rank1]:V0219 05:54:57.302000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [3/0] [__graph_code]          # File: /home/user/run-basic.py:58 in patched_linear, code: bias = DTensor.from_local(bias, mesh, placements)
+[rank1]:V0219 05:54:57.302000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [3/0] [__graph_code]         bias: "f32[10]" = torch__dynamo_variables_torch_prim_from_local_1(l_bias_);  l_bias_ = None
+[rank1]:V0219 05:54:57.302000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [3/0] [__graph_code]         
+[rank1]:V0219 05:54:57.302000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [3/0] [__graph_code]          # File: /home/user/run-basic.py:59 in patched_linear, code: return _original_linear(input, weight, bias)
+[rank1]:V0219 05:54:57.302000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [3/0] [__graph_code]         linear: "f32[1, 10]" = torch._C._nn.linear(l_input_, weight, bias);  l_input_ = weight = bias = None
+[rank1]:V0219 05:54:57.302000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [3/0] [__graph_code]         return (linear,)
+[rank1]:V0219 05:54:57.302000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [3/0] [__graph_code]         
+[rank1]:V0219 05:54:57.302000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [3/0] [__graph_code] 
+[rank1]:V0219 05:54:57.304000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [3/0] [__graph_code] TRACED GRAPH
+[rank1]:V0219 05:54:57.304000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [3/0] [__graph_code]  ===== __compiled_fn_11 =====
+[rank1]:V0219 05:54:57.304000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [3/0] [__graph_code]  /home/user/.local/lib/python3.10/site-packages/torch/fx/_lazy_graph_module.py class GraphModule(torch.nn.Module):
+[rank1]:V0219 05:54:57.304000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [3/0] [__graph_code]     def forward(self, L_input_: "f32[1, 1568][1568, 1]cuda:1", L_weight_: "f32[10, 1568][1568, 1]cuda:1", L_bias_: "f32[10][1]cuda:1"):
+[rank1]:V0219 05:54:57.304000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [3/0] [__graph_code]         l_input_ = L_input_
+[rank1]:V0219 05:54:57.304000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [3/0] [__graph_code]         l_weight_ = L_weight_
+[rank1]:V0219 05:54:57.304000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [3/0] [__graph_code]         l_bias_ = L_bias_
+[rank1]:V0219 05:54:57.304000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [3/0] [__graph_code]         
+[rank1]:V0219 05:54:57.304000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [3/0] [__graph_code]          # File: /home/user/run-basic.py:56 in patched_linear, code: weight = DTensor.from_local(weight, mesh, placements)
+[rank1]:V0219 05:54:57.304000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [3/0] [__graph_code]         weight: "f32[10, 1568][1568, 1]cuda:1" = torch__dynamo_variables_torch_prim_from_local(l_weight_);  l_weight_ = None
+[rank1]:V0219 05:54:57.304000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [3/0] [__graph_code]         
+[rank1]:V0219 05:54:57.304000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [3/0] [__graph_code]          # File: /home/user/run-basic.py:58 in patched_linear, code: bias = DTensor.from_local(bias, mesh, placements)
+[rank1]:V0219 05:54:57.304000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [3/0] [__graph_code]         bias: "f32[10][1]cuda:1" = torch__dynamo_variables_torch_prim_from_local_1(l_bias_);  l_bias_ = None
+[rank1]:V0219 05:54:57.304000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [3/0] [__graph_code]         
+[rank1]:V0219 05:54:57.304000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [3/0] [__graph_code]          # File: /home/user/run-basic.py:59 in patched_linear, code: return _original_linear(input, weight, bias)
+[rank1]:V0219 05:54:57.304000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [3/0] [__graph_code]         linear: "f32[1, 10][10, 1]cuda:1" = torch._C._nn.linear(l_input_, weight, bias);  l_input_ = weight = bias = None
+[rank1]:V0219 05:54:57.304000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [3/0] [__graph_code]         return (linear,)
+[rank1]:V0219 05:54:57.304000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [3/0] [__graph_code]         
+[rank1]:V0219 05:54:57.304000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [3/0] [__graph_code] 
+class GraphModule(torch.nn.Module):
+    def forward(self, L_input_: "f32[1, 1568]", L_weight_: "f32[10, 1568]", L_bias_: "f32[10]"):
+        l_input_ = L_input_
+        l_weight_ = L_weight_
+        l_bias_ = L_bias_
+        
+         # File: /home/user/run-basic.py:56 in patched_linear, code: weight = DTensor.from_local(weight, mesh, placements)
+        weight: "f32[10, 1568]" = torch__dynamo_variables_torch_prim_from_local(l_weight_);  l_weight_ = None
+        
+         # File: /home/user/run-basic.py:58 in patched_linear, code: bias = DTensor.from_local(bias, mesh, placements)
+        bias: "f32[10]" = torch__dynamo_variables_torch_prim_from_local_1(l_bias_);  l_bias_ = None
+        
+         # File: /home/user/run-basic.py:59 in patched_linear, code: return _original_linear(input, weight, bias)
+        linear: "f32[1, 10]" = torch._C._nn.linear(l_input_, weight, bias);  l_input_ = weight = bias = None
+        return (linear,)
+        
+opcode         name       target                                                                                                                          args                      kwargs
+-------------  ---------  ------------------------------------------------------------------------------------------------------------------------------  ------------------------  --------
+placeholder    l_input_   L_input_                                                                                                                        ()                        {}
+placeholder    l_weight_  L_weight_                                                                                                                       ()                        {}
+placeholder    l_bias_    L_bias_                                                                                                                         ()                        {}
+call_function  weight     <function TorchInGraphFunctionVariable._get_handlers.<locals>.handle_from_local.<locals>.fn_with_prim_types at 0x7fb2c06fc280>  (l_weight_,)              {}
+call_function  bias       <function TorchInGraphFunctionVariable._get_handlers.<locals>.handle_from_local.<locals>.fn_with_prim_types at 0x7fb2ac354820>  (l_bias_,)                {}
+call_function  linear     <built-in function linear>                                                                                                      (l_input_, weight, bias)  {}
+output         output     output                                                                                                                          ((linear,),)              {}
+[rank1]:V0219 05:54:57.464000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [4/0] [__graph_code] TRACED GRAPH
+[rank1]:V0219 05:54:57.464000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [4/0] [__graph_code]  ===== pre insert_deferred_runtime_asserts __compiled_fn_13 =====
+[rank1]:V0219 05:54:57.464000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [4/0] [__graph_code]  <eval_with_key>.8 class GraphModule(torch.nn.Module):
+[rank1]:V0219 05:54:57.464000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [4/0] [__graph_code]     def forward(self, L_stack0_: "f32[1, 10]", L_stack0_local_tensor: "f32[1, 10]"):
+[rank1]:V0219 05:54:57.464000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [4/0] [__graph_code]         l_stack0_ = L_stack0_
+[rank1]:V0219 05:54:57.464000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [4/0] [__graph_code]         l_stack0_local_tensor = L_stack0_local_tensor
+[rank1]:V0219 05:54:57.464000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [4/0] [__graph_code]         
+[rank1]:V0219 05:54:57.464000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [4/0] [__graph_code]          # File: /home/user/run-basic.py:88 in torch_dynamo_resume_in_forward_at_87, code: return F.log_softmax(x, dim=1)
+[rank1]:V0219 05:54:57.464000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [4/0] [__graph_code]         log_softmax: "f32[1, 10]" = torch.nn.functional.log_softmax(l_stack0_, dim = 1);  l_stack0_ = None
+[rank1]:V0219 05:54:57.464000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [4/0] [__graph_code]         return (log_softmax,)
+[rank1]:V0219 05:54:57.464000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [4/0] [__graph_code]         
+[rank1]:V0219 05:54:57.464000 2313 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [4/0] [__graph_code] 
+[rank1]:V0219 05:54:57.466000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [4/0] [__graph_code] TRACED GRAPH
+[rank1]:V0219 05:54:57.466000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [4/0] [__graph_code]  ===== __compiled_fn_13 =====
+[rank1]:V0219 05:54:57.466000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [4/0] [__graph_code]  /home/user/.local/lib/python3.10/site-packages/torch/fx/_lazy_graph_module.py class GraphModule(torch.nn.Module):
+[rank1]:V0219 05:54:57.466000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [4/0] [__graph_code]     def forward(self, L_stack0_: "f32[1, 10][10, 1]cuda:1"):
+[rank1]:V0219 05:54:57.466000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [4/0] [__graph_code]         l_stack0_ = L_stack0_
+[rank1]:V0219 05:54:57.466000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [4/0] [__graph_code]         
+[rank1]:V0219 05:54:57.466000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [4/0] [__graph_code]          # File: /home/user/run-basic.py:88 in torch_dynamo_resume_in_forward_at_87, code: return F.log_softmax(x, dim=1)
+[rank1]:V0219 05:54:57.466000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [4/0] [__graph_code]         log_softmax: "f32[1, 10][10, 1]cuda:1" = torch.nn.functional.log_softmax(l_stack0_, dim = 1);  l_stack0_ = None
+[rank1]:V0219 05:54:57.466000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [4/0] [__graph_code]         return (log_softmax,)
+[rank1]:V0219 05:54:57.466000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [4/0] [__graph_code]         
+[rank1]:V0219 05:54:57.466000 2313 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [4/0] [__graph_code] 
+class GraphModule(torch.nn.Module):
+    def forward(self, L_stack0_: "f32[1, 10]"):
+        l_stack0_ = L_stack0_
+        
+         # File: /home/user/run-basic.py:88 in torch_dynamo_resume_in_forward_at_87, code: return F.log_softmax(x, dim=1)
+        log_softmax: "f32[1, 10]" = torch.nn.functional.log_softmax(l_stack0_, dim = 1);  l_stack0_ = None
+        return (log_softmax,)
+        
+opcode         name         target                                    args               kwargs
+-------------  -----------  ----------------------------------------  -----------------  ----------
+placeholder    l_stack0_    L_stack0_                                 ()                 {}
+call_function  log_softmax  <function log_softmax at 0x7fb2d9327c70>  (l_stack0_,)       {'dim': 1}
+output         output       output                                    ((log_softmax,),)  {}
+[rank0]:V0219 05:54:57.500000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [4/0] [__graph_code] TRACED GRAPH
+[rank0]:V0219 05:54:57.500000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [4/0] [__graph_code]  ===== pre insert_deferred_runtime_asserts __compiled_fn_13 =====
+[rank0]:V0219 05:54:57.500000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [4/0] [__graph_code]  <eval_with_key>.8 class GraphModule(torch.nn.Module):
+[rank0]:V0219 05:54:57.500000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [4/0] [__graph_code]     def forward(self, L_stack0_: "f32[1, 10]", L_stack0_local_tensor: "f32[1, 10]"):
+[rank0]:V0219 05:54:57.500000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [4/0] [__graph_code]         l_stack0_ = L_stack0_
+[rank0]:V0219 05:54:57.500000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [4/0] [__graph_code]         l_stack0_local_tensor = L_stack0_local_tensor
+[rank0]:V0219 05:54:57.500000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [4/0] [__graph_code]         
+[rank0]:V0219 05:54:57.500000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [4/0] [__graph_code]          # File: /home/user/run-basic.py:88 in torch_dynamo_resume_in_forward_at_87, code: return F.log_softmax(x, dim=1)
+[rank0]:V0219 05:54:57.500000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [4/0] [__graph_code]         log_softmax: "f32[1, 10]" = torch.nn.functional.log_softmax(l_stack0_, dim = 1);  l_stack0_ = None
+[rank0]:V0219 05:54:57.500000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [4/0] [__graph_code]         return (log_softmax,)
+[rank0]:V0219 05:54:57.500000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [4/0] [__graph_code]         
+[rank0]:V0219 05:54:57.500000 2312 .local/lib/python3.10/site-packages/torch/fx/passes/runtime_assert.py:118] [4/0] [__graph_code] 
+[rank0]:V0219 05:54:57.502000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [4/0] [__graph_code] TRACED GRAPH
+[rank0]:V0219 05:54:57.502000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [4/0] [__graph_code]  ===== __compiled_fn_13 =====
+[rank0]:V0219 05:54:57.502000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [4/0] [__graph_code]  /home/user/.local/lib/python3.10/site-packages/torch/fx/_lazy_graph_module.py class GraphModule(torch.nn.Module):
+[rank0]:V0219 05:54:57.502000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [4/0] [__graph_code]     def forward(self, L_stack0_: "f32[1, 10][10, 1]cuda:0"):
+[rank0]:V0219 05:54:57.502000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [4/0] [__graph_code]         l_stack0_ = L_stack0_
+[rank0]:V0219 05:54:57.502000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [4/0] [__graph_code]         
+[rank0]:V0219 05:54:57.502000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [4/0] [__graph_code]          # File: /home/user/run-basic.py:88 in torch_dynamo_resume_in_forward_at_87, code: return F.log_softmax(x, dim=1)
+[rank0]:V0219 05:54:57.502000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [4/0] [__graph_code]         log_softmax: "f32[1, 10][10, 1]cuda:0" = torch.nn.functional.log_softmax(l_stack0_, dim = 1);  l_stack0_ = None
+[rank0]:V0219 05:54:57.502000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [4/0] [__graph_code]         return (log_softmax,)
+[rank0]:V0219 05:54:57.502000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [4/0] [__graph_code]         
+[rank0]:V0219 05:54:57.502000 2312 .local/lib/python3.10/site-packages/torch/_dynamo/output_graph.py:1353] [4/0] [__graph_code] 
+class GraphModule(torch.nn.Module):
+    def forward(self, L_stack0_: "f32[1, 10]"):
+        l_stack0_ = L_stack0_
+        
+         # File: /home/user/run-basic.py:88 in torch_dynamo_resume_in_forward_at_87, code: return F.log_softmax(x, dim=1)
+        log_softmax: "f32[1, 10]" = torch.nn.functional.log_softmax(l_stack0_, dim = 1);  l_stack0_ = None
+        return (log_softmax,)
+        
+opcode         name         target                                    args               kwargs
+-------------  -----------  ----------------------------------------  -----------------  ----------
+placeholder    l_stack0_    L_stack0_                                 ()                 {}
+call_function  log_softmax  <function log_softmax at 0x7fc01ef27c70>  (l_stack0_,)       {'dim': 1}
+output         output       output                                    ((log_softmax,),)  {}
+user@0e23240e-b871-4da0-90c3-2c3ea88562fc:~$ 

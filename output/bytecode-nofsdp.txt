@@ -1,0 +1,877 @@
+torch.cuda.device_count(): 2
+[rank1]:V0219 06:55:17.685000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0] [__bytecode] ORIGINAL BYTECODE forward /home/user/run-basic.py line 83 
+[rank1]:V0219 06:55:17.685000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0] [__bytecode]  84           0 LOAD_GLOBAL              0 (F)
+[rank1]:V0219 06:55:17.685000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0] [__bytecode]               2 LOAD_METHOD              1 (relu)
+[rank1]:V0219 06:55:17.685000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0] [__bytecode]               4 LOAD_FAST                0 (self)
+[rank1]:V0219 06:55:17.685000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0] [__bytecode]               6 LOAD_METHOD              2 (conv1)
+[rank1]:V0219 06:55:17.685000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0] [__bytecode]               8 LOAD_FAST                1 (x)
+[rank1]:V0219 06:55:17.685000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0] [__bytecode]              10 CALL_METHOD              1
+[rank1]:V0219 06:55:17.685000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0] [__bytecode]              12 CALL_METHOD              1
+[rank1]:V0219 06:55:17.685000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0] [__bytecode]              14 STORE_FAST               1 (x)
+[rank1]:V0219 06:55:17.685000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0] [__bytecode] 
+[rank1]:V0219 06:55:17.685000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0] [__bytecode]  85          16 LOAD_GLOBAL              0 (F)
+[rank1]:V0219 06:55:17.685000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0] [__bytecode]              18 LOAD_METHOD              1 (relu)
+[rank1]:V0219 06:55:17.685000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0] [__bytecode]              20 LOAD_FAST                0 (self)
+[rank1]:V0219 06:55:17.685000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0] [__bytecode]              22 LOAD_METHOD              3 (conv2)
+[rank1]:V0219 06:55:17.685000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0] [__bytecode]              24 LOAD_FAST                1 (x)
+[rank1]:V0219 06:55:17.685000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0] [__bytecode]              26 CALL_METHOD              1
+[rank1]:V0219 06:55:17.685000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0] [__bytecode]              28 CALL_METHOD              1
+[rank1]:V0219 06:55:17.685000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0] [__bytecode]              30 STORE_FAST               1 (x)
+[rank1]:V0219 06:55:17.685000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0] [__bytecode] 
+[rank1]:V0219 06:55:17.685000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0] [__bytecode]  86          32 LOAD_GLOBAL              4 (torch)
+[rank1]:V0219 06:55:17.685000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0] [__bytecode]              34 LOAD_METHOD              5 (flatten)
+[rank1]:V0219 06:55:17.685000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0] [__bytecode]              36 LOAD_FAST                1 (x)
+[rank1]:V0219 06:55:17.685000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0] [__bytecode]              38 LOAD_CONST               1 (1)
+[rank1]:V0219 06:55:17.685000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0] [__bytecode]              40 CALL_METHOD              2
+[rank1]:V0219 06:55:17.685000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0] [__bytecode]              42 STORE_FAST               1 (x)
+[rank1]:V0219 06:55:17.685000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0] [__bytecode] 
+[rank1]:V0219 06:55:17.685000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0] [__bytecode]  87          44 LOAD_FAST                0 (self)
+[rank1]:V0219 06:55:17.685000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0] [__bytecode]              46 LOAD_METHOD              6 (fc)
+[rank1]:V0219 06:55:17.685000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0] [__bytecode]              48 LOAD_FAST                1 (x)
+[rank1]:V0219 06:55:17.685000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0] [__bytecode]              50 CALL_METHOD              1
+[rank1]:V0219 06:55:17.685000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0] [__bytecode]              52 STORE_FAST               1 (x)
+[rank1]:V0219 06:55:17.685000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0] [__bytecode] 
+[rank1]:V0219 06:55:17.685000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0] [__bytecode]  88          54 LOAD_GLOBAL              0 (F)
+[rank1]:V0219 06:55:17.685000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0] [__bytecode]              56 LOAD_ATTR                7 (log_softmax)
+[rank1]:V0219 06:55:17.685000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0] [__bytecode]              58 LOAD_FAST                1 (x)
+[rank1]:V0219 06:55:17.685000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0] [__bytecode]              60 LOAD_CONST               1 (1)
+[rank1]:V0219 06:55:17.685000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0] [__bytecode]              62 LOAD_CONST               2 (('dim',))
+[rank1]:V0219 06:55:17.685000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0] [__bytecode]              64 CALL_FUNCTION_KW         2
+[rank1]:V0219 06:55:17.685000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0] [__bytecode]              66 RETURN_VALUE
+[rank1]:V0219 06:55:17.685000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0] [__bytecode] 
+[rank1]:V0219 06:55:17.685000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0] [__bytecode] 
+[rank0]:V0219 06:55:17.685000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0] [__bytecode] ORIGINAL BYTECODE forward /home/user/run-basic.py line 83 
+[rank0]:V0219 06:55:17.685000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0] [__bytecode]  84           0 LOAD_GLOBAL              0 (F)
+[rank0]:V0219 06:55:17.685000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0] [__bytecode]               2 LOAD_METHOD              1 (relu)
+[rank0]:V0219 06:55:17.685000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0] [__bytecode]               4 LOAD_FAST                0 (self)
+[rank0]:V0219 06:55:17.685000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0] [__bytecode]               6 LOAD_METHOD              2 (conv1)
+[rank0]:V0219 06:55:17.685000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0] [__bytecode]               8 LOAD_FAST                1 (x)
+[rank0]:V0219 06:55:17.685000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0] [__bytecode]              10 CALL_METHOD              1
+[rank0]:V0219 06:55:17.685000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0] [__bytecode]              12 CALL_METHOD              1
+[rank0]:V0219 06:55:17.685000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0] [__bytecode]              14 STORE_FAST               1 (x)
+[rank0]:V0219 06:55:17.685000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0] [__bytecode] 
+[rank0]:V0219 06:55:17.685000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0] [__bytecode]  85          16 LOAD_GLOBAL              0 (F)
+[rank0]:V0219 06:55:17.685000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0] [__bytecode]              18 LOAD_METHOD              1 (relu)
+[rank0]:V0219 06:55:17.685000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0] [__bytecode]              20 LOAD_FAST                0 (self)
+[rank0]:V0219 06:55:17.685000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0] [__bytecode]              22 LOAD_METHOD              3 (conv2)
+[rank0]:V0219 06:55:17.685000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0] [__bytecode]              24 LOAD_FAST                1 (x)
+[rank0]:V0219 06:55:17.685000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0] [__bytecode]              26 CALL_METHOD              1
+[rank0]:V0219 06:55:17.685000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0] [__bytecode]              28 CALL_METHOD              1
+[rank0]:V0219 06:55:17.685000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0] [__bytecode]              30 STORE_FAST               1 (x)
+[rank0]:V0219 06:55:17.685000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0] [__bytecode] 
+[rank0]:V0219 06:55:17.685000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0] [__bytecode]  86          32 LOAD_GLOBAL              4 (torch)
+[rank0]:V0219 06:55:17.685000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0] [__bytecode]              34 LOAD_METHOD              5 (flatten)
+[rank0]:V0219 06:55:17.685000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0] [__bytecode]              36 LOAD_FAST                1 (x)
+[rank0]:V0219 06:55:17.685000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0] [__bytecode]              38 LOAD_CONST               1 (1)
+[rank0]:V0219 06:55:17.685000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0] [__bytecode]              40 CALL_METHOD              2
+[rank0]:V0219 06:55:17.685000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0] [__bytecode]              42 STORE_FAST               1 (x)
+[rank0]:V0219 06:55:17.685000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0] [__bytecode] 
+[rank0]:V0219 06:55:17.685000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0] [__bytecode]  87          44 LOAD_FAST                0 (self)
+[rank0]:V0219 06:55:17.685000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0] [__bytecode]              46 LOAD_METHOD              6 (fc)
+[rank0]:V0219 06:55:17.685000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0] [__bytecode]              48 LOAD_FAST                1 (x)
+[rank0]:V0219 06:55:17.685000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0] [__bytecode]              50 CALL_METHOD              1
+[rank0]:V0219 06:55:17.685000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0] [__bytecode]              52 STORE_FAST               1 (x)
+[rank0]:V0219 06:55:17.685000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0] [__bytecode] 
+[rank0]:V0219 06:55:17.685000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0] [__bytecode]  88          54 LOAD_GLOBAL              0 (F)
+[rank0]:V0219 06:55:17.685000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0] [__bytecode]              56 LOAD_ATTR                7 (log_softmax)
+[rank0]:V0219 06:55:17.685000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0] [__bytecode]              58 LOAD_FAST                1 (x)
+[rank0]:V0219 06:55:17.685000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0] [__bytecode]              60 LOAD_CONST               1 (1)
+[rank0]:V0219 06:55:17.685000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0] [__bytecode]              62 LOAD_CONST               2 (('dim',))
+[rank0]:V0219 06:55:17.685000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0] [__bytecode]              64 CALL_FUNCTION_KW         2
+[rank0]:V0219 06:55:17.685000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0] [__bytecode]              66 RETURN_VALUE
+[rank0]:V0219 06:55:17.685000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0] [__bytecode] 
+[rank0]:V0219 06:55:17.685000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0] [__bytecode] 
+[rank0]:V0219 06:55:17.825000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0_1] [__bytecode] MODIFIED BYTECODE forward /home/user/run-basic.py line 83 
+[rank0]:V0219 06:55:17.825000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0_1] [__bytecode]  83           0 LOAD_GLOBAL             11 (__compiled_fn_2)
+[rank0]:V0219 06:55:17.825000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0_1] [__bytecode]               2 LOAD_FAST                0 (self)
+[rank0]:V0219 06:55:17.825000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0_1] [__bytecode]               4 LOAD_ATTR               10 (_modules)
+[rank0]:V0219 06:55:17.825000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0_1] [__bytecode]               6 LOAD_CONST               3 ('conv1')
+[rank0]:V0219 06:55:17.825000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0_1] [__bytecode]               8 BINARY_SUBSCR
+[rank0]:V0219 06:55:17.825000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0_1] [__bytecode]              10 LOAD_ATTR               12 (_parameters)
+[rank0]:V0219 06:55:17.825000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0_1] [__bytecode]              12 LOAD_CONST               4 ('weight')
+[rank0]:V0219 06:55:17.825000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0_1] [__bytecode]              14 BINARY_SUBSCR
+[rank0]:V0219 06:55:17.825000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0_1] [__bytecode]              16 LOAD_FAST                0 (self)
+[rank0]:V0219 06:55:17.825000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0_1] [__bytecode]              18 LOAD_ATTR               10 (_modules)
+[rank0]:V0219 06:55:17.825000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0_1] [__bytecode]              20 LOAD_CONST               3 ('conv1')
+[rank0]:V0219 06:55:17.825000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0_1] [__bytecode]              22 BINARY_SUBSCR
+[rank0]:V0219 06:55:17.825000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0_1] [__bytecode]              24 LOAD_ATTR               12 (_parameters)
+[rank0]:V0219 06:55:17.825000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0_1] [__bytecode]              26 LOAD_CONST               5 ('bias')
+[rank0]:V0219 06:55:17.825000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0_1] [__bytecode]              28 BINARY_SUBSCR
+[rank0]:V0219 06:55:17.825000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0_1] [__bytecode]              30 LOAD_FAST                1 (x)
+[rank0]:V0219 06:55:17.825000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0_1] [__bytecode]              32 CALL_FUNCTION            3
+[rank0]:V0219 06:55:17.825000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0_1] [__bytecode]              34 STORE_FAST               2 (graph_out_0)
+[rank0]:V0219 06:55:17.825000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0_1] [__bytecode]              36 LOAD_GLOBAL              0 (F)
+[rank0]:V0219 06:55:17.825000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0_1] [__bytecode]              38 LOAD_ATTR                1 (relu)
+[rank0]:V0219 06:55:17.825000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0_1] [__bytecode]              40 LOAD_FAST                0 (self)
+[rank0]:V0219 06:55:17.825000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0_1] [__bytecode]              42 LOAD_ATTR               10 (_modules)
+[rank0]:V0219 06:55:17.825000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0_1] [__bytecode]              44 LOAD_CONST               6 ('conv2')
+[rank0]:V0219 06:55:17.825000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0_1] [__bytecode]              46 BINARY_SUBSCR
+[rank0]:V0219 06:55:17.825000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0_1] [__bytecode]              48 LOAD_FAST                2 (graph_out_0)
+[rank0]:V0219 06:55:17.825000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0_1] [__bytecode]              50 LOAD_CONST               7 (0)
+[rank0]:V0219 06:55:17.825000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0_1] [__bytecode]              52 BINARY_SUBSCR
+[rank0]:V0219 06:55:17.825000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0_1] [__bytecode]              54 DELETE_FAST              2 (graph_out_0)
+[rank0]:V0219 06:55:17.825000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0_1] [__bytecode] 
+[rank0]:V0219 06:55:17.825000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0_1] [__bytecode]  85          56 CALL_FUNCTION            1
+[rank0]:V0219 06:55:17.825000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0_1] [__bytecode]              58 LOAD_GLOBAL             13 (__resume_at_28_3)
+[rank0]:V0219 06:55:17.825000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0_1] [__bytecode]              60 ROT_THREE
+[rank0]:V0219 06:55:17.825000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0_1] [__bytecode]              62 LOAD_FAST                0 (self)
+[rank0]:V0219 06:55:17.825000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0_1] [__bytecode]              64 CALL_FUNCTION            3
+[rank0]:V0219 06:55:17.825000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0_1] [__bytecode]              66 RETURN_VALUE
+[rank0]:V0219 06:55:17.825000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0_1] [__bytecode] 
+[rank0]:V0219 06:55:17.825000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0_1] [__bytecode] 
+[rank1]:V0219 06:55:17.839000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0_1] [__bytecode] MODIFIED BYTECODE forward /home/user/run-basic.py line 83 
+[rank1]:V0219 06:55:17.839000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0_1] [__bytecode]  83           0 LOAD_GLOBAL             11 (__compiled_fn_2)
+[rank1]:V0219 06:55:17.839000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0_1] [__bytecode]               2 LOAD_FAST                0 (self)
+[rank1]:V0219 06:55:17.839000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0_1] [__bytecode]               4 LOAD_ATTR               10 (_modules)
+[rank1]:V0219 06:55:17.839000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0_1] [__bytecode]               6 LOAD_CONST               3 ('conv1')
+[rank1]:V0219 06:55:17.839000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0_1] [__bytecode]               8 BINARY_SUBSCR
+[rank1]:V0219 06:55:17.839000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0_1] [__bytecode]              10 LOAD_ATTR               12 (_parameters)
+[rank1]:V0219 06:55:17.839000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0_1] [__bytecode]              12 LOAD_CONST               4 ('weight')
+[rank1]:V0219 06:55:17.839000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0_1] [__bytecode]              14 BINARY_SUBSCR
+[rank1]:V0219 06:55:17.839000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0_1] [__bytecode]              16 LOAD_FAST                0 (self)
+[rank1]:V0219 06:55:17.839000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0_1] [__bytecode]              18 LOAD_ATTR               10 (_modules)
+[rank1]:V0219 06:55:17.839000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0_1] [__bytecode]              20 LOAD_CONST               3 ('conv1')
+[rank1]:V0219 06:55:17.839000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0_1] [__bytecode]              22 BINARY_SUBSCR
+[rank1]:V0219 06:55:17.839000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0_1] [__bytecode]              24 LOAD_ATTR               12 (_parameters)
+[rank1]:V0219 06:55:17.839000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0_1] [__bytecode]              26 LOAD_CONST               5 ('bias')
+[rank1]:V0219 06:55:17.839000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0_1] [__bytecode]              28 BINARY_SUBSCR
+[rank1]:V0219 06:55:17.839000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0_1] [__bytecode]              30 LOAD_FAST                1 (x)
+[rank1]:V0219 06:55:17.839000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0_1] [__bytecode]              32 CALL_FUNCTION            3
+[rank1]:V0219 06:55:17.839000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0_1] [__bytecode]              34 STORE_FAST               2 (graph_out_0)
+[rank1]:V0219 06:55:17.839000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0_1] [__bytecode]              36 LOAD_GLOBAL              0 (F)
+[rank1]:V0219 06:55:17.839000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0_1] [__bytecode]              38 LOAD_ATTR                1 (relu)
+[rank1]:V0219 06:55:17.839000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0_1] [__bytecode]              40 LOAD_FAST                0 (self)
+[rank1]:V0219 06:55:17.839000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0_1] [__bytecode]              42 LOAD_ATTR               10 (_modules)
+[rank1]:V0219 06:55:17.839000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0_1] [__bytecode]              44 LOAD_CONST               6 ('conv2')
+[rank1]:V0219 06:55:17.839000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0_1] [__bytecode]              46 BINARY_SUBSCR
+[rank1]:V0219 06:55:17.839000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0_1] [__bytecode]              48 LOAD_FAST                2 (graph_out_0)
+[rank1]:V0219 06:55:17.839000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0_1] [__bytecode]              50 LOAD_CONST               7 (0)
+[rank1]:V0219 06:55:17.839000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0_1] [__bytecode]              52 BINARY_SUBSCR
+[rank1]:V0219 06:55:17.839000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0_1] [__bytecode]              54 DELETE_FAST              2 (graph_out_0)
+[rank1]:V0219 06:55:17.839000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0_1] [__bytecode] 
+[rank1]:V0219 06:55:17.839000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0_1] [__bytecode]  85          56 CALL_FUNCTION            1
+[rank1]:V0219 06:55:17.839000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0_1] [__bytecode]              58 LOAD_GLOBAL             13 (__resume_at_28_3)
+[rank1]:V0219 06:55:17.839000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0_1] [__bytecode]              60 ROT_THREE
+[rank1]:V0219 06:55:17.839000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0_1] [__bytecode]              62 LOAD_FAST                0 (self)
+[rank1]:V0219 06:55:17.839000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0_1] [__bytecode]              64 CALL_FUNCTION            3
+[rank1]:V0219 06:55:17.839000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0_1] [__bytecode]              66 RETURN_VALUE
+[rank1]:V0219 06:55:17.839000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0_1] [__bytecode] 
+[rank1]:V0219 06:55:17.839000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [0/0_1] [__bytecode] 
+[rank0]:V0219 06:55:17.991000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode] ORIGINAL BYTECODE patched_conv2d /home/user/run-basic.py line 33 
+[rank0]:V0219 06:55:17.991000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]  35           0 LOAD_GLOBAL              0 (isinstance)
+[rank0]:V0219 06:55:17.991000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]               2 LOAD_FAST                0 (input)
+[rank0]:V0219 06:55:17.991000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]               4 LOAD_GLOBAL              1 (DTensor)
+[rank0]:V0219 06:55:17.991000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]               6 CALL_FUNCTION            2
+[rank0]:V0219 06:55:17.991000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]               8 POP_JUMP_IF_FALSE       41 (to 82)
+[rank0]:V0219 06:55:17.991000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode] 
+[rank0]:V0219 06:55:17.991000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]  36          10 LOAD_FAST                0 (input)
+[rank0]:V0219 06:55:17.991000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]              12 LOAD_ATTR                2 (_spec)
+[rank0]:V0219 06:55:17.991000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]              14 LOAD_ATTR                3 (mesh)
+[rank0]:V0219 06:55:17.991000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]              16 STORE_FAST               7 (mesh)
+[rank0]:V0219 06:55:17.991000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode] 
+[rank0]:V0219 06:55:17.991000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]  37          18 LOAD_FAST                0 (input)
+[rank0]:V0219 06:55:17.991000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]              20 LOAD_ATTR                2 (_spec)
+[rank0]:V0219 06:55:17.991000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]              22 LOAD_ATTR                4 (placements)
+[rank0]:V0219 06:55:17.991000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]              24 STORE_FAST               8 (placements)
+[rank0]:V0219 06:55:17.991000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode] 
+[rank0]:V0219 06:55:17.991000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]  38          26 LOAD_GLOBAL              0 (isinstance)
+[rank0]:V0219 06:55:17.991000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]              28 LOAD_FAST                1 (weight)
+[rank0]:V0219 06:55:17.991000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]              30 LOAD_GLOBAL              1 (DTensor)
+[rank0]:V0219 06:55:17.991000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]              32 CALL_FUNCTION            2
+[rank0]:V0219 06:55:17.991000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]              34 POP_JUMP_IF_TRUE        25 (to 50)
+[rank0]:V0219 06:55:17.991000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode] 
+[rank0]:V0219 06:55:17.991000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]  39          36 LOAD_GLOBAL              1 (DTensor)
+[rank0]:V0219 06:55:17.991000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]              38 LOAD_METHOD              5 (from_local)
+[rank0]:V0219 06:55:17.991000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]              40 LOAD_FAST                1 (weight)
+[rank0]:V0219 06:55:17.991000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]              42 LOAD_FAST                7 (mesh)
+[rank0]:V0219 06:55:17.991000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]              44 LOAD_FAST                8 (placements)
+[rank0]:V0219 06:55:17.991000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]              46 CALL_METHOD              3
+[rank0]:V0219 06:55:17.991000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]              48 STORE_FAST               1 (weight)
+[rank0]:V0219 06:55:17.991000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode] 
+[rank0]:V0219 06:55:17.991000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]  40     >>   50 LOAD_FAST                2 (bias)
+[rank0]:V0219 06:55:17.991000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]              52 LOAD_CONST               0 (None)
+[rank0]:V0219 06:55:17.991000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]              54 IS_OP                    1
+[rank0]:V0219 06:55:17.991000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]              56 POP_JUMP_IF_FALSE       41 (to 82)
+[rank0]:V0219 06:55:17.991000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]              58 LOAD_GLOBAL              0 (isinstance)
+[rank0]:V0219 06:55:17.991000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]              60 LOAD_FAST                2 (bias)
+[rank0]:V0219 06:55:17.991000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]              62 LOAD_GLOBAL              1 (DTensor)
+[rank0]:V0219 06:55:17.991000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]              64 CALL_FUNCTION            2
+[rank0]:V0219 06:55:17.991000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]              66 POP_JUMP_IF_TRUE        41 (to 82)
+[rank0]:V0219 06:55:17.991000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode] 
+[rank0]:V0219 06:55:17.991000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]  41          68 LOAD_GLOBAL              1 (DTensor)
+[rank0]:V0219 06:55:17.991000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]              70 LOAD_METHOD              5 (from_local)
+[rank0]:V0219 06:55:17.991000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]              72 LOAD_FAST                2 (bias)
+[rank0]:V0219 06:55:17.991000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]              74 LOAD_FAST                7 (mesh)
+[rank0]:V0219 06:55:17.991000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]              76 LOAD_FAST                8 (placements)
+[rank0]:V0219 06:55:17.991000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]              78 CALL_METHOD              3
+[rank0]:V0219 06:55:17.991000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]              80 STORE_FAST               2 (bias)
+[rank0]:V0219 06:55:17.991000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode] 
+[rank0]:V0219 06:55:17.991000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]  42     >>   82 LOAD_GLOBAL              6 (_original_conv2d)
+[rank0]:V0219 06:55:17.991000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]              84 LOAD_FAST                0 (input)
+[rank0]:V0219 06:55:17.991000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]              86 LOAD_FAST                1 (weight)
+[rank0]:V0219 06:55:17.991000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]              88 LOAD_FAST                2 (bias)
+[rank0]:V0219 06:55:17.991000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]              90 LOAD_FAST                3 (stride)
+[rank0]:V0219 06:55:17.991000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]              92 LOAD_FAST                4 (padding)
+[rank0]:V0219 06:55:17.991000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]              94 LOAD_FAST                5 (dilation)
+[rank0]:V0219 06:55:17.991000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]              96 LOAD_FAST                6 (groups)
+[rank0]:V0219 06:55:17.991000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]              98 CALL_FUNCTION            7
+[rank0]:V0219 06:55:17.991000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]             100 RETURN_VALUE
+[rank0]:V0219 06:55:17.991000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode] 
+[rank0]:V0219 06:55:17.991000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode] 
+[rank1]:V0219 06:55:18.006000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode] ORIGINAL BYTECODE patched_conv2d /home/user/run-basic.py line 33 
+[rank1]:V0219 06:55:18.006000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]  35           0 LOAD_GLOBAL              0 (isinstance)
+[rank1]:V0219 06:55:18.006000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]               2 LOAD_FAST                0 (input)
+[rank1]:V0219 06:55:18.006000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]               4 LOAD_GLOBAL              1 (DTensor)
+[rank1]:V0219 06:55:18.006000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]               6 CALL_FUNCTION            2
+[rank1]:V0219 06:55:18.006000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]               8 POP_JUMP_IF_FALSE       41 (to 82)
+[rank1]:V0219 06:55:18.006000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode] 
+[rank1]:V0219 06:55:18.006000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]  36          10 LOAD_FAST                0 (input)
+[rank1]:V0219 06:55:18.006000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]              12 LOAD_ATTR                2 (_spec)
+[rank1]:V0219 06:55:18.006000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]              14 LOAD_ATTR                3 (mesh)
+[rank1]:V0219 06:55:18.006000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]              16 STORE_FAST               7 (mesh)
+[rank1]:V0219 06:55:18.006000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode] 
+[rank1]:V0219 06:55:18.006000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]  37          18 LOAD_FAST                0 (input)
+[rank1]:V0219 06:55:18.006000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]              20 LOAD_ATTR                2 (_spec)
+[rank1]:V0219 06:55:18.006000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]              22 LOAD_ATTR                4 (placements)
+[rank1]:V0219 06:55:18.006000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]              24 STORE_FAST               8 (placements)
+[rank1]:V0219 06:55:18.006000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode] 
+[rank1]:V0219 06:55:18.006000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]  38          26 LOAD_GLOBAL              0 (isinstance)
+[rank1]:V0219 06:55:18.006000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]              28 LOAD_FAST                1 (weight)
+[rank1]:V0219 06:55:18.006000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]              30 LOAD_GLOBAL              1 (DTensor)
+[rank1]:V0219 06:55:18.006000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]              32 CALL_FUNCTION            2
+[rank1]:V0219 06:55:18.006000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]              34 POP_JUMP_IF_TRUE        25 (to 50)
+[rank1]:V0219 06:55:18.006000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode] 
+[rank1]:V0219 06:55:18.006000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]  39          36 LOAD_GLOBAL              1 (DTensor)
+[rank1]:V0219 06:55:18.006000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]              38 LOAD_METHOD              5 (from_local)
+[rank1]:V0219 06:55:18.006000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]              40 LOAD_FAST                1 (weight)
+[rank1]:V0219 06:55:18.006000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]              42 LOAD_FAST                7 (mesh)
+[rank1]:V0219 06:55:18.006000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]              44 LOAD_FAST                8 (placements)
+[rank1]:V0219 06:55:18.006000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]              46 CALL_METHOD              3
+[rank1]:V0219 06:55:18.006000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]              48 STORE_FAST               1 (weight)
+[rank1]:V0219 06:55:18.006000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode] 
+[rank1]:V0219 06:55:18.006000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]  40     >>   50 LOAD_FAST                2 (bias)
+[rank1]:V0219 06:55:18.006000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]              52 LOAD_CONST               0 (None)
+[rank1]:V0219 06:55:18.006000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]              54 IS_OP                    1
+[rank1]:V0219 06:55:18.006000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]              56 POP_JUMP_IF_FALSE       41 (to 82)
+[rank1]:V0219 06:55:18.006000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]              58 LOAD_GLOBAL              0 (isinstance)
+[rank1]:V0219 06:55:18.006000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]              60 LOAD_FAST                2 (bias)
+[rank1]:V0219 06:55:18.006000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]              62 LOAD_GLOBAL              1 (DTensor)
+[rank1]:V0219 06:55:18.006000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]              64 CALL_FUNCTION            2
+[rank1]:V0219 06:55:18.006000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]              66 POP_JUMP_IF_TRUE        41 (to 82)
+[rank1]:V0219 06:55:18.006000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode] 
+[rank1]:V0219 06:55:18.006000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]  41          68 LOAD_GLOBAL              1 (DTensor)
+[rank1]:V0219 06:55:18.006000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]              70 LOAD_METHOD              5 (from_local)
+[rank1]:V0219 06:55:18.006000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]              72 LOAD_FAST                2 (bias)
+[rank1]:V0219 06:55:18.006000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]              74 LOAD_FAST                7 (mesh)
+[rank1]:V0219 06:55:18.006000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]              76 LOAD_FAST                8 (placements)
+[rank1]:V0219 06:55:18.006000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]              78 CALL_METHOD              3
+[rank1]:V0219 06:55:18.006000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]              80 STORE_FAST               2 (bias)
+[rank1]:V0219 06:55:18.006000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode] 
+[rank1]:V0219 06:55:18.006000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]  42     >>   82 LOAD_GLOBAL              6 (_original_conv2d)
+[rank1]:V0219 06:55:18.006000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]              84 LOAD_FAST                0 (input)
+[rank1]:V0219 06:55:18.006000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]              86 LOAD_FAST                1 (weight)
+[rank1]:V0219 06:55:18.006000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]              88 LOAD_FAST                2 (bias)
+[rank1]:V0219 06:55:18.006000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]              90 LOAD_FAST                3 (stride)
+[rank1]:V0219 06:55:18.006000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]              92 LOAD_FAST                4 (padding)
+[rank1]:V0219 06:55:18.006000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]              94 LOAD_FAST                5 (dilation)
+[rank1]:V0219 06:55:18.006000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]              96 LOAD_FAST                6 (groups)
+[rank1]:V0219 06:55:18.006000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]              98 CALL_FUNCTION            7
+[rank1]:V0219 06:55:18.006000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]             100 RETURN_VALUE
+[rank1]:V0219 06:55:18.006000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode] 
+[rank1]:V0219 06:55:18.006000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode] 
+[rank0]:V0219 06:55:18.038000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode] MODIFIED BYTECODE patched_conv2d /home/user/run-basic.py line 33 
+[rank0]:V0219 06:55:18.038000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]  33           0 LOAD_GLOBAL              7 (__compiled_fn_5)
+[rank0]:V0219 06:55:18.038000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]               2 LOAD_FAST                0 (input)
+[rank0]:V0219 06:55:18.038000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]               4 LOAD_FAST                1 (weight)
+[rank0]:V0219 06:55:18.038000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]               6 LOAD_FAST                2 (bias)
+[rank0]:V0219 06:55:18.038000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]               8 CALL_FUNCTION            3
+[rank0]:V0219 06:55:18.038000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]              10 UNPACK_SEQUENCE          1
+[rank0]:V0219 06:55:18.038000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]              12 RETURN_VALUE
+[rank0]:V0219 06:55:18.038000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode] 
+[rank0]:V0219 06:55:18.038000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode] 
+[rank1]:V0219 06:55:18.067000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode] MODIFIED BYTECODE patched_conv2d /home/user/run-basic.py line 33 
+[rank1]:V0219 06:55:18.067000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]  33           0 LOAD_GLOBAL              7 (__compiled_fn_5)
+[rank1]:V0219 06:55:18.067000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]               2 LOAD_FAST                0 (input)
+[rank1]:V0219 06:55:18.067000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]               4 LOAD_FAST                1 (weight)
+[rank1]:V0219 06:55:18.067000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]               6 LOAD_FAST                2 (bias)
+[rank1]:V0219 06:55:18.067000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]               8 CALL_FUNCTION            3
+[rank1]:V0219 06:55:18.067000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]              10 UNPACK_SEQUENCE          1
+[rank1]:V0219 06:55:18.067000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode]              12 RETURN_VALUE
+[rank1]:V0219 06:55:18.067000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode] 
+[rank1]:V0219 06:55:18.067000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [1/0] [__bytecode] 
+[rank0]:V0219 06:55:18.075000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode] ORIGINAL BYTECODE torch_dynamo_resume_in_forward_at_85 /home/user/run-basic.py line 85 
+[rank0]:V0219 06:55:18.075000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode]  85           0 LOAD_FAST                0 (___stack0)
+[rank0]:V0219 06:55:18.075000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode]               2 LOAD_FAST                1 (___stack1)
+[rank0]:V0219 06:55:18.075000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode]               4 JUMP_ABSOLUTE           17 (to 34)
+[rank0]:V0219 06:55:18.075000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode]               6 LOAD_GLOBAL              0 (F)
+[rank0]:V0219 06:55:18.075000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode]               8 LOAD_ATTR                1 (relu)
+[rank0]:V0219 06:55:18.075000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode]              10 LOAD_FAST                2 (self)
+[rank0]:V0219 06:55:18.075000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode]              12 LOAD_ATTR                2 (conv1)
+[rank0]:V0219 06:55:18.075000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode]              14 LOAD_FAST                3 (x)
+[rank0]:V0219 06:55:18.075000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode]              16 CALL_FUNCTION            1
+[rank0]:V0219 06:55:18.075000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode]              18 CALL_FUNCTION            1
+[rank0]:V0219 06:55:18.075000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode]              20 STORE_FAST               3 (x)
+[rank0]:V0219 06:55:18.075000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode]              22 LOAD_GLOBAL              0 (F)
+[rank0]:V0219 06:55:18.075000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode]              24 LOAD_ATTR                1 (relu)
+[rank0]:V0219 06:55:18.075000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode]              26 LOAD_FAST                2 (self)
+[rank0]:V0219 06:55:18.075000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode]              28 LOAD_ATTR                3 (conv2)
+[rank0]:V0219 06:55:18.075000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode]              30 LOAD_FAST                3 (x)
+[rank0]:V0219 06:55:18.075000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode]              32 CALL_FUNCTION            1
+[rank0]:V0219 06:55:18.075000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode]         >>   34 CALL_FUNCTION            1
+[rank0]:V0219 06:55:18.075000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode]              36 STORE_FAST               3 (x)
+[rank0]:V0219 06:55:18.075000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode] 
+[rank0]:V0219 06:55:18.075000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode]  86          38 LOAD_GLOBAL              4 (torch)
+[rank0]:V0219 06:55:18.075000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode]              40 LOAD_ATTR                5 (flatten)
+[rank0]:V0219 06:55:18.075000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode]              42 LOAD_FAST                3 (x)
+[rank0]:V0219 06:55:18.075000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode]              44 LOAD_CONST               1 (1)
+[rank0]:V0219 06:55:18.075000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode]              46 CALL_FUNCTION            2
+[rank0]:V0219 06:55:18.075000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode]              48 STORE_FAST               3 (x)
+[rank0]:V0219 06:55:18.075000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode] 
+[rank0]:V0219 06:55:18.075000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode]  87          50 LOAD_FAST                2 (self)
+[rank0]:V0219 06:55:18.075000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode]              52 LOAD_ATTR                6 (fc)
+[rank0]:V0219 06:55:18.075000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode]              54 LOAD_FAST                3 (x)
+[rank0]:V0219 06:55:18.075000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode]              56 CALL_FUNCTION            1
+[rank0]:V0219 06:55:18.075000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode]              58 STORE_FAST               3 (x)
+[rank0]:V0219 06:55:18.075000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode] 
+[rank0]:V0219 06:55:18.075000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode]  88          60 LOAD_GLOBAL              0 (F)
+[rank0]:V0219 06:55:18.075000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode]              62 LOAD_ATTR                7 (log_softmax)
+[rank0]:V0219 06:55:18.075000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode]              64 LOAD_FAST                3 (x)
+[rank0]:V0219 06:55:18.075000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode]              66 LOAD_CONST               1 (1)
+[rank0]:V0219 06:55:18.075000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode]              68 LOAD_CONST               2 (('dim',))
+[rank0]:V0219 06:55:18.075000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode]              70 CALL_FUNCTION_KW         2
+[rank0]:V0219 06:55:18.075000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode]              72 RETURN_VALUE
+[rank0]:V0219 06:55:18.075000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode] 
+[rank0]:V0219 06:55:18.075000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode] 
+[rank1]:V0219 06:55:18.103000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode] ORIGINAL BYTECODE torch_dynamo_resume_in_forward_at_85 /home/user/run-basic.py line 85 
+[rank1]:V0219 06:55:18.103000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode]  85           0 LOAD_FAST                0 (___stack0)
+[rank1]:V0219 06:55:18.103000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode]               2 LOAD_FAST                1 (___stack1)
+[rank1]:V0219 06:55:18.103000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode]               4 JUMP_ABSOLUTE           17 (to 34)
+[rank1]:V0219 06:55:18.103000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode]               6 LOAD_GLOBAL              0 (F)
+[rank1]:V0219 06:55:18.103000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode]               8 LOAD_ATTR                1 (relu)
+[rank1]:V0219 06:55:18.103000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode]              10 LOAD_FAST                2 (self)
+[rank1]:V0219 06:55:18.103000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode]              12 LOAD_ATTR                2 (conv1)
+[rank1]:V0219 06:55:18.103000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode]              14 LOAD_FAST                3 (x)
+[rank1]:V0219 06:55:18.103000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode]              16 CALL_FUNCTION            1
+[rank1]:V0219 06:55:18.103000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode]              18 CALL_FUNCTION            1
+[rank1]:V0219 06:55:18.103000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode]              20 STORE_FAST               3 (x)
+[rank1]:V0219 06:55:18.103000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode]              22 LOAD_GLOBAL              0 (F)
+[rank1]:V0219 06:55:18.103000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode]              24 LOAD_ATTR                1 (relu)
+[rank1]:V0219 06:55:18.103000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode]              26 LOAD_FAST                2 (self)
+[rank1]:V0219 06:55:18.103000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode]              28 LOAD_ATTR                3 (conv2)
+[rank1]:V0219 06:55:18.103000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode]              30 LOAD_FAST                3 (x)
+[rank1]:V0219 06:55:18.103000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode]              32 CALL_FUNCTION            1
+[rank1]:V0219 06:55:18.103000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode]         >>   34 CALL_FUNCTION            1
+[rank1]:V0219 06:55:18.103000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode]              36 STORE_FAST               3 (x)
+[rank1]:V0219 06:55:18.103000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode] 
+[rank1]:V0219 06:55:18.103000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode]  86          38 LOAD_GLOBAL              4 (torch)
+[rank1]:V0219 06:55:18.103000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode]              40 LOAD_ATTR                5 (flatten)
+[rank1]:V0219 06:55:18.103000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode]              42 LOAD_FAST                3 (x)
+[rank1]:V0219 06:55:18.103000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode]              44 LOAD_CONST               1 (1)
+[rank1]:V0219 06:55:18.103000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode]              46 CALL_FUNCTION            2
+[rank1]:V0219 06:55:18.103000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode]              48 STORE_FAST               3 (x)
+[rank1]:V0219 06:55:18.103000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode] 
+[rank1]:V0219 06:55:18.103000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode]  87          50 LOAD_FAST                2 (self)
+[rank1]:V0219 06:55:18.103000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode]              52 LOAD_ATTR                6 (fc)
+[rank1]:V0219 06:55:18.103000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode]              54 LOAD_FAST                3 (x)
+[rank1]:V0219 06:55:18.103000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode]              56 CALL_FUNCTION            1
+[rank1]:V0219 06:55:18.103000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode]              58 STORE_FAST               3 (x)
+[rank1]:V0219 06:55:18.103000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode] 
+[rank1]:V0219 06:55:18.103000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode]  88          60 LOAD_GLOBAL              0 (F)
+[rank1]:V0219 06:55:18.103000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode]              62 LOAD_ATTR                7 (log_softmax)
+[rank1]:V0219 06:55:18.103000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode]              64 LOAD_FAST                3 (x)
+[rank1]:V0219 06:55:18.103000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode]              66 LOAD_CONST               1 (1)
+[rank1]:V0219 06:55:18.103000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode]              68 LOAD_CONST               2 (('dim',))
+[rank1]:V0219 06:55:18.103000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode]              70 CALL_FUNCTION_KW         2
+[rank1]:V0219 06:55:18.103000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode]              72 RETURN_VALUE
+[rank1]:V0219 06:55:18.103000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode] 
+[rank1]:V0219 06:55:18.103000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0] [__bytecode] 
+[rank0]:V0219 06:55:18.137000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0_1] [__bytecode] MODIFIED BYTECODE torch_dynamo_resume_in_forward_at_85 /home/user/run-basic.py line 85 
+[rank0]:V0219 06:55:18.137000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0_1] [__bytecode]  85           0 LOAD_GLOBAL              9 (__compiled_fn_8)
+[rank0]:V0219 06:55:18.137000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0_1] [__bytecode]               2 LOAD_FAST                1 (___stack1)
+[rank0]:V0219 06:55:18.137000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0_1] [__bytecode]               4 CALL_FUNCTION            1
+[rank0]:V0219 06:55:18.137000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0_1] [__bytecode]               6 STORE_FAST               4 (graph_out_0)
+[rank0]:V0219 06:55:18.137000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0_1] [__bytecode]               8 LOAD_FAST                2 (self)
+[rank0]:V0219 06:55:18.137000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0_1] [__bytecode]              10 LOAD_ATTR                8 (_modules)
+[rank0]:V0219 06:55:18.137000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0_1] [__bytecode]              12 LOAD_CONST               3 ('fc')
+[rank0]:V0219 06:55:18.137000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0_1] [__bytecode]              14 BINARY_SUBSCR
+[rank0]:V0219 06:55:18.137000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0_1] [__bytecode]              16 LOAD_FAST                4 (graph_out_0)
+[rank0]:V0219 06:55:18.137000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0_1] [__bytecode]              18 LOAD_CONST               4 (0)
+[rank0]:V0219 06:55:18.137000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0_1] [__bytecode]              20 BINARY_SUBSCR
+[rank0]:V0219 06:55:18.137000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0_1] [__bytecode]              22 DELETE_FAST              4 (graph_out_0)
+[rank0]:V0219 06:55:18.137000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0_1] [__bytecode] 
+[rank0]:V0219 06:55:18.137000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0_1] [__bytecode]  87          24 CALL_FUNCTION            1
+[rank0]:V0219 06:55:18.137000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0_1] [__bytecode]              26 LOAD_GLOBAL             10 (__resume_at_58_9)
+[rank0]:V0219 06:55:18.137000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0_1] [__bytecode]              28 ROT_TWO
+[rank0]:V0219 06:55:18.137000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0_1] [__bytecode]              30 CALL_FUNCTION            1
+[rank0]:V0219 06:55:18.137000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0_1] [__bytecode]              32 RETURN_VALUE
+[rank0]:V0219 06:55:18.137000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0_1] [__bytecode] 
+[rank0]:V0219 06:55:18.137000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0_1] [__bytecode] 
+[rank0]:V0219 06:55:18.149000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode] ORIGINAL BYTECODE patched_linear /home/user/run-basic.py line 51 
+[rank0]:V0219 06:55:18.149000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]  52           0 LOAD_GLOBAL              0 (isinstance)
+[rank0]:V0219 06:55:18.149000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]               2 LOAD_FAST                0 (input)
+[rank0]:V0219 06:55:18.149000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]               4 LOAD_GLOBAL              1 (DTensor)
+[rank0]:V0219 06:55:18.149000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]               6 CALL_FUNCTION            2
+[rank0]:V0219 06:55:18.149000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]               8 POP_JUMP_IF_FALSE       41 (to 82)
+[rank0]:V0219 06:55:18.149000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode] 
+[rank0]:V0219 06:55:18.149000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]  53          10 LOAD_FAST                0 (input)
+[rank0]:V0219 06:55:18.149000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]              12 LOAD_ATTR                2 (_spec)
+[rank0]:V0219 06:55:18.149000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]              14 LOAD_ATTR                3 (mesh)
+[rank0]:V0219 06:55:18.149000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]              16 STORE_FAST               3 (mesh)
+[rank0]:V0219 06:55:18.149000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode] 
+[rank0]:V0219 06:55:18.149000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]  54          18 LOAD_FAST                0 (input)
+[rank0]:V0219 06:55:18.149000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]              20 LOAD_ATTR                2 (_spec)
+[rank0]:V0219 06:55:18.149000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]              22 LOAD_ATTR                4 (placements)
+[rank0]:V0219 06:55:18.149000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]              24 STORE_FAST               4 (placements)
+[rank0]:V0219 06:55:18.149000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode] 
+[rank0]:V0219 06:55:18.149000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]  55          26 LOAD_GLOBAL              0 (isinstance)
+[rank0]:V0219 06:55:18.149000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]              28 LOAD_FAST                1 (weight)
+[rank0]:V0219 06:55:18.149000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]              30 LOAD_GLOBAL              1 (DTensor)
+[rank0]:V0219 06:55:18.149000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]              32 CALL_FUNCTION            2
+[rank0]:V0219 06:55:18.149000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]              34 POP_JUMP_IF_TRUE        25 (to 50)
+[rank0]:V0219 06:55:18.149000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode] 
+[rank0]:V0219 06:55:18.149000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]  56          36 LOAD_GLOBAL              1 (DTensor)
+[rank0]:V0219 06:55:18.149000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]              38 LOAD_METHOD              5 (from_local)
+[rank0]:V0219 06:55:18.149000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]              40 LOAD_FAST                1 (weight)
+[rank0]:V0219 06:55:18.149000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]              42 LOAD_FAST                3 (mesh)
+[rank0]:V0219 06:55:18.149000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]              44 LOAD_FAST                4 (placements)
+[rank0]:V0219 06:55:18.149000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]              46 CALL_METHOD              3
+[rank0]:V0219 06:55:18.149000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]              48 STORE_FAST               1 (weight)
+[rank0]:V0219 06:55:18.149000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode] 
+[rank0]:V0219 06:55:18.149000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]  57     >>   50 LOAD_FAST                2 (bias)
+[rank0]:V0219 06:55:18.149000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]              52 LOAD_CONST               0 (None)
+[rank0]:V0219 06:55:18.149000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]              54 IS_OP                    1
+[rank0]:V0219 06:55:18.149000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]              56 POP_JUMP_IF_FALSE       41 (to 82)
+[rank0]:V0219 06:55:18.149000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]              58 LOAD_GLOBAL              0 (isinstance)
+[rank0]:V0219 06:55:18.149000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]              60 LOAD_FAST                2 (bias)
+[rank0]:V0219 06:55:18.149000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]              62 LOAD_GLOBAL              1 (DTensor)
+[rank0]:V0219 06:55:18.149000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]              64 CALL_FUNCTION            2
+[rank0]:V0219 06:55:18.149000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]              66 POP_JUMP_IF_TRUE        41 (to 82)
+[rank0]:V0219 06:55:18.149000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode] 
+[rank0]:V0219 06:55:18.149000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]  58          68 LOAD_GLOBAL              1 (DTensor)
+[rank0]:V0219 06:55:18.149000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]              70 LOAD_METHOD              5 (from_local)
+[rank0]:V0219 06:55:18.149000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]              72 LOAD_FAST                2 (bias)
+[rank0]:V0219 06:55:18.149000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]              74 LOAD_FAST                3 (mesh)
+[rank0]:V0219 06:55:18.149000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]              76 LOAD_FAST                4 (placements)
+[rank0]:V0219 06:55:18.149000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]              78 CALL_METHOD              3
+[rank0]:V0219 06:55:18.149000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]              80 STORE_FAST               2 (bias)
+[rank0]:V0219 06:55:18.149000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode] 
+[rank0]:V0219 06:55:18.149000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]  59     >>   82 LOAD_GLOBAL              6 (_original_linear)
+[rank0]:V0219 06:55:18.149000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]              84 LOAD_FAST                0 (input)
+[rank0]:V0219 06:55:18.149000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]              86 LOAD_FAST                1 (weight)
+[rank0]:V0219 06:55:18.149000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]              88 LOAD_FAST                2 (bias)
+[rank0]:V0219 06:55:18.149000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]              90 CALL_FUNCTION            3
+[rank0]:V0219 06:55:18.149000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]              92 RETURN_VALUE
+[rank0]:V0219 06:55:18.149000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode] 
+[rank0]:V0219 06:55:18.149000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode] 
+[rank1]:V0219 06:55:18.169000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0_1] [__bytecode] MODIFIED BYTECODE torch_dynamo_resume_in_forward_at_85 /home/user/run-basic.py line 85 
+[rank1]:V0219 06:55:18.169000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0_1] [__bytecode]  85           0 LOAD_GLOBAL              9 (__compiled_fn_8)
+[rank1]:V0219 06:55:18.169000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0_1] [__bytecode]               2 LOAD_FAST                1 (___stack1)
+[rank1]:V0219 06:55:18.169000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0_1] [__bytecode]               4 CALL_FUNCTION            1
+[rank1]:V0219 06:55:18.169000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0_1] [__bytecode]               6 STORE_FAST               4 (graph_out_0)
+[rank1]:V0219 06:55:18.169000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0_1] [__bytecode]               8 LOAD_FAST                2 (self)
+[rank1]:V0219 06:55:18.169000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0_1] [__bytecode]              10 LOAD_ATTR                8 (_modules)
+[rank1]:V0219 06:55:18.169000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0_1] [__bytecode]              12 LOAD_CONST               3 ('fc')
+[rank1]:V0219 06:55:18.169000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0_1] [__bytecode]              14 BINARY_SUBSCR
+[rank1]:V0219 06:55:18.169000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0_1] [__bytecode]              16 LOAD_FAST                4 (graph_out_0)
+[rank1]:V0219 06:55:18.169000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0_1] [__bytecode]              18 LOAD_CONST               4 (0)
+[rank1]:V0219 06:55:18.169000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0_1] [__bytecode]              20 BINARY_SUBSCR
+[rank1]:V0219 06:55:18.169000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0_1] [__bytecode]              22 DELETE_FAST              4 (graph_out_0)
+[rank1]:V0219 06:55:18.169000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0_1] [__bytecode] 
+[rank1]:V0219 06:55:18.169000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0_1] [__bytecode]  87          24 CALL_FUNCTION            1
+[rank1]:V0219 06:55:18.169000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0_1] [__bytecode]              26 LOAD_GLOBAL             10 (__resume_at_58_9)
+[rank1]:V0219 06:55:18.169000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0_1] [__bytecode]              28 ROT_TWO
+[rank1]:V0219 06:55:18.169000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0_1] [__bytecode]              30 CALL_FUNCTION            1
+[rank1]:V0219 06:55:18.169000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0_1] [__bytecode]              32 RETURN_VALUE
+[rank1]:V0219 06:55:18.169000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0_1] [__bytecode] 
+[rank1]:V0219 06:55:18.169000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [2/0_1] [__bytecode] 
+[rank1]:V0219 06:55:18.181000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode] ORIGINAL BYTECODE patched_linear /home/user/run-basic.py line 51 
+[rank1]:V0219 06:55:18.181000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]  52           0 LOAD_GLOBAL              0 (isinstance)
+[rank1]:V0219 06:55:18.181000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]               2 LOAD_FAST                0 (input)
+[rank1]:V0219 06:55:18.181000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]               4 LOAD_GLOBAL              1 (DTensor)
+[rank1]:V0219 06:55:18.181000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]               6 CALL_FUNCTION            2
+[rank1]:V0219 06:55:18.181000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]               8 POP_JUMP_IF_FALSE       41 (to 82)
+[rank1]:V0219 06:55:18.181000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode] 
+[rank1]:V0219 06:55:18.181000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]  53          10 LOAD_FAST                0 (input)
+[rank1]:V0219 06:55:18.181000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]              12 LOAD_ATTR                2 (_spec)
+[rank1]:V0219 06:55:18.181000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]              14 LOAD_ATTR                3 (mesh)
+[rank1]:V0219 06:55:18.181000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]              16 STORE_FAST               3 (mesh)
+[rank1]:V0219 06:55:18.181000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode] 
+[rank1]:V0219 06:55:18.181000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]  54          18 LOAD_FAST                0 (input)
+[rank1]:V0219 06:55:18.181000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]              20 LOAD_ATTR                2 (_spec)
+[rank1]:V0219 06:55:18.181000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]              22 LOAD_ATTR                4 (placements)
+[rank1]:V0219 06:55:18.181000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]              24 STORE_FAST               4 (placements)
+[rank1]:V0219 06:55:18.181000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode] 
+[rank1]:V0219 06:55:18.181000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]  55          26 LOAD_GLOBAL              0 (isinstance)
+[rank1]:V0219 06:55:18.181000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]              28 LOAD_FAST                1 (weight)
+[rank1]:V0219 06:55:18.181000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]              30 LOAD_GLOBAL              1 (DTensor)
+[rank1]:V0219 06:55:18.181000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]              32 CALL_FUNCTION            2
+[rank1]:V0219 06:55:18.181000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]              34 POP_JUMP_IF_TRUE        25 (to 50)
+[rank1]:V0219 06:55:18.181000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode] 
+[rank1]:V0219 06:55:18.181000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]  56          36 LOAD_GLOBAL              1 (DTensor)
+[rank1]:V0219 06:55:18.181000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]              38 LOAD_METHOD              5 (from_local)
+[rank1]:V0219 06:55:18.181000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]              40 LOAD_FAST                1 (weight)
+[rank1]:V0219 06:55:18.181000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]              42 LOAD_FAST                3 (mesh)
+[rank1]:V0219 06:55:18.181000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]              44 LOAD_FAST                4 (placements)
+[rank1]:V0219 06:55:18.181000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]              46 CALL_METHOD              3
+[rank1]:V0219 06:55:18.181000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]              48 STORE_FAST               1 (weight)
+[rank1]:V0219 06:55:18.181000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode] 
+[rank1]:V0219 06:55:18.181000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]  57     >>   50 LOAD_FAST                2 (bias)
+[rank1]:V0219 06:55:18.181000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]              52 LOAD_CONST               0 (None)
+[rank1]:V0219 06:55:18.181000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]              54 IS_OP                    1
+[rank1]:V0219 06:55:18.181000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]              56 POP_JUMP_IF_FALSE       41 (to 82)
+[rank1]:V0219 06:55:18.181000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]              58 LOAD_GLOBAL              0 (isinstance)
+[rank1]:V0219 06:55:18.181000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]              60 LOAD_FAST                2 (bias)
+[rank1]:V0219 06:55:18.181000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]              62 LOAD_GLOBAL              1 (DTensor)
+[rank1]:V0219 06:55:18.181000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]              64 CALL_FUNCTION            2
+[rank1]:V0219 06:55:18.181000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]              66 POP_JUMP_IF_TRUE        41 (to 82)
+[rank1]:V0219 06:55:18.181000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode] 
+[rank1]:V0219 06:55:18.181000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]  58          68 LOAD_GLOBAL              1 (DTensor)
+[rank1]:V0219 06:55:18.181000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]              70 LOAD_METHOD              5 (from_local)
+[rank1]:V0219 06:55:18.181000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]              72 LOAD_FAST                2 (bias)
+[rank1]:V0219 06:55:18.181000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]              74 LOAD_FAST                3 (mesh)
+[rank1]:V0219 06:55:18.181000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]              76 LOAD_FAST                4 (placements)
+[rank1]:V0219 06:55:18.181000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]              78 CALL_METHOD              3
+[rank1]:V0219 06:55:18.181000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]              80 STORE_FAST               2 (bias)
+[rank1]:V0219 06:55:18.181000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode] 
+[rank1]:V0219 06:55:18.181000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]  59     >>   82 LOAD_GLOBAL              6 (_original_linear)
+[rank1]:V0219 06:55:18.181000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]              84 LOAD_FAST                0 (input)
+[rank1]:V0219 06:55:18.181000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]              86 LOAD_FAST                1 (weight)
+[rank1]:V0219 06:55:18.181000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]              88 LOAD_FAST                2 (bias)
+[rank1]:V0219 06:55:18.181000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]              90 CALL_FUNCTION            3
+[rank1]:V0219 06:55:18.181000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]              92 RETURN_VALUE
+[rank1]:V0219 06:55:18.181000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode] 
+[rank1]:V0219 06:55:18.181000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode] 
+class GraphModule(torch.nn.Module):
+    def forward(self, L_self_modules_conv1_parameters_weight_: "f32[16, 1, 2, 2]", L_self_modules_conv1_parameters_bias_: "f32[16]", L_x_: "f32[1, 1, 28, 28]"):
+        l_self_modules_conv1_parameters_weight_ = L_self_modules_conv1_parameters_weight_
+        l_self_modules_conv1_parameters_bias_ = L_self_modules_conv1_parameters_bias_
+        l_x_ = L_x_
+        
+         # File: /home/user/run-basic.py:39 in patched_conv2d, code: weight = DTensor.from_local(weight, mesh, placements)
+        weight: "f32[16, 1, 2, 2]" = torch__dynamo_variables_torch_prim_from_local(l_self_modules_conv1_parameters_weight_);  l_self_modules_conv1_parameters_weight_ = None
+        
+         # File: /home/user/run-basic.py:41 in patched_conv2d, code: bias = DTensor.from_local(bias, mesh, placements)
+        bias: "f32[16]" = torch__dynamo_variables_torch_prim_from_local_1(l_self_modules_conv1_parameters_bias_);  l_self_modules_conv1_parameters_bias_ = None
+        
+         # File: /home/user/run-basic.py:42 in patched_conv2d, code: return _original_conv2d(input, weight, bias, stride, padding, dilation, groups)
+        conv2d: "f32[1, 16, 14, 14]" = torch.conv2d(l_x_, weight, bias, (2, 2), (0, 0), (1, 1), 1);  l_x_ = weight = bias = None
+        
+         # File: /home/user/run-basic.py:84 in forward, code: x = F.relu(self.conv1(x))
+        x: "f32[1, 16, 14, 14]" = torch.nn.functional.relu(conv2d);  conv2d = None
+        return (x,)
+        
+opcode         name                                     target                                                                                                                          args                                             kwargs
+-------------  ---------------------------------------  ------------------------------------------------------------------------------------------------------------------------------  -----------------------------------------------  --------
+placeholder    l_self_modules_conv1_parameters_weight_  L_self_modules_conv1_parameters_weight_                                                                                         ()                                               {}
+placeholder    l_self_modules_conv1_parameters_bias_    L_self_modules_conv1_parameters_bias_                                                                                           ()                                               {}
+placeholder    l_x_                                     L_x_                                                                                                                            ()                                               {}
+call_function  weight                                   <function TorchInGraphFunctionVariable._get_handlers.<locals>.handle_from_local.<locals>.fn_with_prim_types at 0x7f8d44102c20>  (l_self_modules_conv1_parameters_weight_,)       {}
+call_function  bias                                     <function TorchInGraphFunctionVariable._get_handlers.<locals>.handle_from_local.<locals>.fn_with_prim_types at 0x7f8d4423a7a0>  (l_self_modules_conv1_parameters_bias_,)         {}
+call_function  conv2d                                   <built-in method conv2d of type object at 0x7f8e1181fec0>                                                                       (l_x_, weight, bias, (2, 2), (0, 0), (1, 1), 1)  {}
+call_function  x                                        <function relu at 0x7f8d5261f2e0>                                                                                               (conv2d,)                                        {}
+output         output                                   output                                                                                                                          ((x,),)                                          {}
+class GraphModule(torch.nn.Module):
+    def forward(self, L_input_: "f32[1, 16, 14, 14]", L_weight_: "f32[32, 16, 2, 2]", L_bias_: "f32[32]"):
+        l_input_ = L_input_
+        l_weight_ = L_weight_
+        l_bias_ = L_bias_
+        
+         # File: /home/user/run-basic.py:39 in patched_conv2d, code: weight = DTensor.from_local(weight, mesh, placements)
+        weight: "f32[32, 16, 2, 2]" = torch__dynamo_variables_torch_prim_from_local(l_weight_);  l_weight_ = None
+        
+         # File: /home/user/run-basic.py:41 in patched_conv2d, code: bias = DTensor.from_local(bias, mesh, placements)
+        bias: "f32[32]" = torch__dynamo_variables_torch_prim_from_local_1(l_bias_);  l_bias_ = None
+        
+         # File: /home/user/run-basic.py:42 in patched_conv2d, code: return _original_conv2d(input, weight, bias, stride, padding, dilation, groups)
+        conv2d: "f32[1, 32, 7, 7]" = torch.conv2d(l_input_, weight, bias, (2, 2), (0, 0), (1, 1), 1);  l_input_ = weight = bias = None
+        return (conv2d,)
+        
+opcode         name       target                                                                                                                          args                                                 kwargs
+-------------  ---------  ------------------------------------------------------------------------------------------------------------------------------  ---------------------------------------------------  --------
+placeholder    l_input_   L_input_                                                                                                                        ()                                                   {}
+placeholder    l_weight_  L_weight_                                                                                                                       ()                                                   {}
+placeholder    l_bias_    L_bias_                                                                                                                         ()                                                   {}
+call_function  weight     <function TorchInGraphFunctionVariable._get_handlers.<locals>.handle_from_local.<locals>.fn_with_prim_types at 0x7f8d46803b50>  (l_weight_,)                                         {}
+call_function  bias       <function TorchInGraphFunctionVariable._get_handlers.<locals>.handle_from_local.<locals>.fn_with_prim_types at 0x7f8d3c0c2200>  (l_bias_,)                                           {}
+call_function  conv2d     <built-in method conv2d of type object at 0x7f8e1181fec0>                                                                       (l_input_, weight, bias, (2, 2), (0, 0), (1, 1), 1)  {}
+output         output     output                                                                                                                          ((conv2d,),)                                         {}
+class GraphModule(torch.nn.Module):
+    def forward(self, L_stack1_: "f32[1, 32, 7, 7]"):
+        l_stack1_ = L_stack1_
+        
+         # File: /home/user/run-basic.py:85 in torch_dynamo_resume_in_forward_at_85, code: x = F.relu(self.conv2(x))
+        x: "f32[1, 32, 7, 7]" = torch.nn.functional.relu(l_stack1_);  l_stack1_ = None
+        
+         # File: /home/user/run-basic.py:86 in torch_dynamo_resume_in_forward_at_85, code: x = torch.flatten(x, 1)
+        x_1: "f32[1, 1568]" = torch.flatten(x, 1);  x = None
+        return (x_1,)
+        
+opcode         name       target                                                      args          kwargs
+-------------  ---------  ----------------------------------------------------------  ------------  --------
+placeholder    l_stack1_  L_stack1_                                                   ()            {}
+call_function  x          <function relu at 0x7f8d5261f2e0>                           (l_stack1_,)  {}
+call_function  x_1        <built-in method flatten of type object at 0x7f8e1181fec0>  (x, 1)        {}
+output         output     output                                                      ((x_1,),)     {}
+[rank0]:V0219 06:55:18.208000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode] MODIFIED BYTECODE patched_linear /home/user/run-basic.py line 51 
+[rank0]:V0219 06:55:18.208000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]  51           0 LOAD_GLOBAL              7 (__compiled_fn_11)
+[rank0]:V0219 06:55:18.208000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]               2 LOAD_FAST                0 (input)
+[rank0]:V0219 06:55:18.208000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]               4 LOAD_FAST                1 (weight)
+[rank0]:V0219 06:55:18.208000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]               6 LOAD_FAST                2 (bias)
+[rank0]:V0219 06:55:18.208000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]               8 CALL_FUNCTION            3
+[rank0]:V0219 06:55:18.208000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]              10 UNPACK_SEQUENCE          1
+[rank0]:V0219 06:55:18.208000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]              12 RETURN_VALUE
+[rank0]:V0219 06:55:18.208000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode] 
+[rank0]:V0219 06:55:18.208000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode] 
+class GraphModule(torch.nn.Module):
+    def forward(self, L_self_modules_conv1_parameters_weight_: "f32[16, 1, 2, 2]", L_self_modules_conv1_parameters_bias_: "f32[16]", L_x_: "f32[1, 1, 28, 28]"):
+        l_self_modules_conv1_parameters_weight_ = L_self_modules_conv1_parameters_weight_
+        l_self_modules_conv1_parameters_bias_ = L_self_modules_conv1_parameters_bias_
+        l_x_ = L_x_
+        
+         # File: /home/user/run-basic.py:39 in patched_conv2d, code: weight = DTensor.from_local(weight, mesh, placements)
+        weight: "f32[16, 1, 2, 2]" = torch__dynamo_variables_torch_prim_from_local(l_self_modules_conv1_parameters_weight_);  l_self_modules_conv1_parameters_weight_ = None
+        
+         # File: /home/user/run-basic.py:41 in patched_conv2d, code: bias = DTensor.from_local(bias, mesh, placements)
+        bias: "f32[16]" = torch__dynamo_variables_torch_prim_from_local_1(l_self_modules_conv1_parameters_bias_);  l_self_modules_conv1_parameters_bias_ = None
+        
+         # File: /home/user/run-basic.py:42 in patched_conv2d, code: return _original_conv2d(input, weight, bias, stride, padding, dilation, groups)
+        conv2d: "f32[1, 16, 14, 14]" = torch.conv2d(l_x_, weight, bias, (2, 2), (0, 0), (1, 1), 1);  l_x_ = weight = bias = None
+        
+         # File: /home/user/run-basic.py:84 in forward, code: x = F.relu(self.conv1(x))
+        x: "f32[1, 16, 14, 14]" = torch.nn.functional.relu(conv2d);  conv2d = None
+        return (x,)
+        
+opcode         name                                     target                                                                                                                          args                                             kwargs
+-------------  ---------------------------------------  ------------------------------------------------------------------------------------------------------------------------------  -----------------------------------------------  --------
+placeholder    l_self_modules_conv1_parameters_weight_  L_self_modules_conv1_parameters_weight_                                                                                         ()                                               {}
+placeholder    l_self_modules_conv1_parameters_bias_    L_self_modules_conv1_parameters_bias_                                                                                           ()                                               {}
+placeholder    l_x_                                     L_x_                                                                                                                            ()                                               {}
+call_function  weight                                   <function TorchInGraphFunctionVariable._get_handlers.<locals>.handle_from_local.<locals>.fn_with_prim_types at 0x7fafd04f2c20>  (l_self_modules_conv1_parameters_weight_,)       {}
+call_function  bias                                     <function TorchInGraphFunctionVariable._get_handlers.<locals>.handle_from_local.<locals>.fn_with_prim_types at 0x7fafd062a7a0>  (l_self_modules_conv1_parameters_bias_,)         {}
+call_function  conv2d                                   <built-in method conv2d of type object at 0x7fb0a7c1fec0>                                                                       (l_x_, weight, bias, (2, 2), (0, 0), (1, 1), 1)  {}
+call_function  x                                        <function relu at 0x7fafe8a272e0>                                                                                               (conv2d,)                                        {}
+output         output                                   output                                                                                                                          ((x,),)                                          {}
+class GraphModule(torch.nn.Module):
+    def forward(self, L_input_: "f32[1, 16, 14, 14]", L_weight_: "f32[32, 16, 2, 2]", L_bias_: "f32[32]"):
+        l_input_ = L_input_
+        l_weight_ = L_weight_
+        l_bias_ = L_bias_
+        
+         # File: /home/user/run-basic.py:39 in patched_conv2d, code: weight = DTensor.from_local(weight, mesh, placements)
+        weight: "f32[32, 16, 2, 2]" = torch__dynamo_variables_torch_prim_from_local(l_weight_);  l_weight_ = None
+        
+         # File: /home/user/run-basic.py:41 in patched_conv2d, code: bias = DTensor.from_local(bias, mesh, placements)
+        bias: "f32[32]" = torch__dynamo_variables_torch_prim_from_local_1(l_bias_);  l_bias_ = None
+        
+         # File: /home/user/run-basic.py:42 in patched_conv2d, code: return _original_conv2d(input, weight, bias, stride, padding, dilation, groups)
+        conv2d: "f32[1, 32, 7, 7]" = torch.conv2d(l_input_, weight, bias, (2, 2), (0, 0), (1, 1), 1);  l_input_ = weight = bias = None
+        return (conv2d,)
+        
+opcode         name       target                                                                                                                          args                                                 kwargs
+-------------  ---------  ------------------------------------------------------------------------------------------------------------------------------  ---------------------------------------------------  --------
+placeholder    l_input_   L_input_                                                                                                                        ()                                                   {}
+placeholder    l_weight_  L_weight_                                                                                                                       ()                                                   {}
+placeholder    l_bias_    L_bias_                                                                                                                         ()                                                   {}
+call_function  weight     <function TorchInGraphFunctionVariable._get_handlers.<locals>.handle_from_local.<locals>.fn_with_prim_types at 0x7fafdcc0fb50>  (l_weight_,)                                         {}
+call_function  bias       <function TorchInGraphFunctionVariable._get_handlers.<locals>.handle_from_local.<locals>.fn_with_prim_types at 0x7fafbc4b63b0>  (l_bias_,)                                           {}
+call_function  conv2d     <built-in method conv2d of type object at 0x7fb0a7c1fec0>                                                                       (l_input_, weight, bias, (2, 2), (0, 0), (1, 1), 1)  {}
+output         output     output                                                                                                                          ((conv2d,),)                                         {}
+class GraphModule(torch.nn.Module):
+    def forward(self, L_stack1_: "f32[1, 32, 7, 7]"):
+        l_stack1_ = L_stack1_
+        
+         # File: /home/user/run-basic.py:85 in torch_dynamo_resume_in_forward_at_85, code: x = F.relu(self.conv2(x))
+        x: "f32[1, 32, 7, 7]" = torch.nn.functional.relu(l_stack1_);  l_stack1_ = None
+        
+         # File: /home/user/run-basic.py:86 in torch_dynamo_resume_in_forward_at_85, code: x = torch.flatten(x, 1)
+        x_1: "f32[1, 1568]" = torch.flatten(x, 1);  x = None
+        return (x_1,)
+        
+opcode         name       target                                                      args          kwargs
+-------------  ---------  ----------------------------------------------------------  ------------  --------
+placeholder    l_stack1_  L_stack1_                                                   ()            {}
+call_function  x          <function relu at 0x7fafe8a272e0>                           (l_stack1_,)  {}
+call_function  x_1        <built-in method flatten of type object at 0x7fb0a7c1fec0>  (x, 1)        {}
+output         output     output                                                      ((x_1,),)     {}
+[rank1]:V0219 06:55:18.249000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode] MODIFIED BYTECODE patched_linear /home/user/run-basic.py line 51 
+[rank1]:V0219 06:55:18.249000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]  51           0 LOAD_GLOBAL              7 (__compiled_fn_11)
+[rank1]:V0219 06:55:18.249000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]               2 LOAD_FAST                0 (input)
+[rank1]:V0219 06:55:18.249000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]               4 LOAD_FAST                1 (weight)
+[rank1]:V0219 06:55:18.249000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]               6 LOAD_FAST                2 (bias)
+[rank1]:V0219 06:55:18.249000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]               8 CALL_FUNCTION            3
+[rank1]:V0219 06:55:18.249000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]              10 UNPACK_SEQUENCE          1
+[rank1]:V0219 06:55:18.249000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode]              12 RETURN_VALUE
+[rank1]:V0219 06:55:18.249000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode] 
+[rank1]:V0219 06:55:18.249000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [3/0] [__bytecode] 
+[rank0]:V0219 06:55:18.291000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode] ORIGINAL BYTECODE torch_dynamo_resume_in_forward_at_87 /home/user/run-basic.py line 87 
+[rank0]:V0219 06:55:18.291000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode]  87           0 LOAD_FAST                0 (___stack0)
+[rank0]:V0219 06:55:18.291000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode]               2 JUMP_ABSOLUTE           28 (to 56)
+[rank0]:V0219 06:55:18.291000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode]               4 LOAD_GLOBAL              0 (F)
+[rank0]:V0219 06:55:18.291000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode]               6 LOAD_ATTR                1 (relu)
+[rank0]:V0219 06:55:18.291000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode]               8 LOAD_FAST                1 (self)
+[rank0]:V0219 06:55:18.291000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode]              10 LOAD_ATTR                2 (conv1)
+[rank0]:V0219 06:55:18.291000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode]              12 LOAD_FAST                2 (x)
+[rank0]:V0219 06:55:18.291000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode]              14 CALL_FUNCTION            1
+[rank0]:V0219 06:55:18.291000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode]              16 CALL_FUNCTION            1
+[rank0]:V0219 06:55:18.291000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode]              18 STORE_FAST               2 (x)
+[rank0]:V0219 06:55:18.291000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode]              20 LOAD_GLOBAL              0 (F)
+[rank0]:V0219 06:55:18.291000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode]              22 LOAD_ATTR                1 (relu)
+[rank0]:V0219 06:55:18.291000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode]              24 LOAD_FAST                1 (self)
+[rank0]:V0219 06:55:18.291000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode]              26 LOAD_ATTR                3 (conv2)
+[rank0]:V0219 06:55:18.291000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode]              28 LOAD_FAST                2 (x)
+[rank0]:V0219 06:55:18.291000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode]              30 CALL_FUNCTION            1
+[rank0]:V0219 06:55:18.291000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode]              32 CALL_FUNCTION            1
+[rank0]:V0219 06:55:18.291000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode]              34 STORE_FAST               2 (x)
+[rank0]:V0219 06:55:18.291000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode]              36 LOAD_GLOBAL              4 (torch)
+[rank0]:V0219 06:55:18.291000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode]              38 LOAD_ATTR                5 (flatten)
+[rank0]:V0219 06:55:18.291000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode]              40 LOAD_FAST                2 (x)
+[rank0]:V0219 06:55:18.291000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode]              42 LOAD_CONST               1 (1)
+[rank0]:V0219 06:55:18.291000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode]              44 CALL_FUNCTION            2
+[rank0]:V0219 06:55:18.291000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode]              46 STORE_FAST               2 (x)
+[rank0]:V0219 06:55:18.291000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode]              48 LOAD_FAST                1 (self)
+[rank0]:V0219 06:55:18.291000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode]              50 LOAD_ATTR                6 (fc)
+[rank0]:V0219 06:55:18.291000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode]              52 LOAD_FAST                2 (x)
+[rank0]:V0219 06:55:18.291000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode]              54 CALL_FUNCTION            1
+[rank0]:V0219 06:55:18.291000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode]         >>   56 STORE_FAST               2 (x)
+[rank0]:V0219 06:55:18.291000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode] 
+[rank0]:V0219 06:55:18.291000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode]  88          58 LOAD_GLOBAL              0 (F)
+[rank0]:V0219 06:55:18.291000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode]              60 LOAD_ATTR                7 (log_softmax)
+[rank0]:V0219 06:55:18.291000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode]              62 LOAD_FAST                2 (x)
+[rank0]:V0219 06:55:18.291000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode]              64 LOAD_CONST               1 (1)
+[rank0]:V0219 06:55:18.291000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode]              66 LOAD_CONST               2 (('dim',))
+[rank0]:V0219 06:55:18.291000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode]              68 CALL_FUNCTION_KW         2
+[rank0]:V0219 06:55:18.291000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode]              70 RETURN_VALUE
+[rank0]:V0219 06:55:18.291000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode] 
+[rank0]:V0219 06:55:18.291000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode] 
+[rank1]:V0219 06:55:18.332000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode] ORIGINAL BYTECODE torch_dynamo_resume_in_forward_at_87 /home/user/run-basic.py line 87 
+[rank1]:V0219 06:55:18.332000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode]  87           0 LOAD_FAST                0 (___stack0)
+[rank1]:V0219 06:55:18.332000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode]               2 JUMP_ABSOLUTE           28 (to 56)
+[rank1]:V0219 06:55:18.332000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode]               4 LOAD_GLOBAL              0 (F)
+[rank1]:V0219 06:55:18.332000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode]               6 LOAD_ATTR                1 (relu)
+[rank1]:V0219 06:55:18.332000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode]               8 LOAD_FAST                1 (self)
+[rank1]:V0219 06:55:18.332000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode]              10 LOAD_ATTR                2 (conv1)
+[rank1]:V0219 06:55:18.332000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode]              12 LOAD_FAST                2 (x)
+[rank1]:V0219 06:55:18.332000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode]              14 CALL_FUNCTION            1
+[rank1]:V0219 06:55:18.332000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode]              16 CALL_FUNCTION            1
+[rank1]:V0219 06:55:18.332000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode]              18 STORE_FAST               2 (x)
+[rank1]:V0219 06:55:18.332000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode]              20 LOAD_GLOBAL              0 (F)
+[rank1]:V0219 06:55:18.332000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode]              22 LOAD_ATTR                1 (relu)
+[rank1]:V0219 06:55:18.332000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode]              24 LOAD_FAST                1 (self)
+[rank1]:V0219 06:55:18.332000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode]              26 LOAD_ATTR                3 (conv2)
+[rank1]:V0219 06:55:18.332000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode]              28 LOAD_FAST                2 (x)
+[rank1]:V0219 06:55:18.332000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode]              30 CALL_FUNCTION            1
+[rank1]:V0219 06:55:18.332000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode]              32 CALL_FUNCTION            1
+[rank1]:V0219 06:55:18.332000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode]              34 STORE_FAST               2 (x)
+[rank1]:V0219 06:55:18.332000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode]              36 LOAD_GLOBAL              4 (torch)
+[rank1]:V0219 06:55:18.332000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode]              38 LOAD_ATTR                5 (flatten)
+[rank1]:V0219 06:55:18.332000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode]              40 LOAD_FAST                2 (x)
+[rank1]:V0219 06:55:18.332000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode]              42 LOAD_CONST               1 (1)
+[rank1]:V0219 06:55:18.332000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode]              44 CALL_FUNCTION            2
+[rank1]:V0219 06:55:18.332000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode]              46 STORE_FAST               2 (x)
+[rank1]:V0219 06:55:18.332000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode]              48 LOAD_FAST                1 (self)
+[rank1]:V0219 06:55:18.332000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode]              50 LOAD_ATTR                6 (fc)
+[rank1]:V0219 06:55:18.332000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode]              52 LOAD_FAST                2 (x)
+[rank1]:V0219 06:55:18.332000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode]              54 CALL_FUNCTION            1
+[rank1]:V0219 06:55:18.332000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode]         >>   56 STORE_FAST               2 (x)
+[rank1]:V0219 06:55:18.332000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode] 
+[rank1]:V0219 06:55:18.332000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode]  88          58 LOAD_GLOBAL              0 (F)
+[rank1]:V0219 06:55:18.332000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode]              60 LOAD_ATTR                7 (log_softmax)
+[rank1]:V0219 06:55:18.332000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode]              62 LOAD_FAST                2 (x)
+[rank1]:V0219 06:55:18.332000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode]              64 LOAD_CONST               1 (1)
+[rank1]:V0219 06:55:18.332000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode]              66 LOAD_CONST               2 (('dim',))
+[rank1]:V0219 06:55:18.332000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode]              68 CALL_FUNCTION_KW         2
+[rank1]:V0219 06:55:18.332000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode]              70 RETURN_VALUE
+[rank1]:V0219 06:55:18.332000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode] 
+[rank1]:V0219 06:55:18.332000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode] 
+[rank0]:V0219 06:55:18.335000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode] MODIFIED BYTECODE torch_dynamo_resume_in_forward_at_87 /home/user/run-basic.py line 87 
+[rank0]:V0219 06:55:18.335000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode]  87           0 LOAD_GLOBAL              8 (__compiled_fn_13)
+[rank0]:V0219 06:55:18.335000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode]               2 LOAD_FAST                0 (___stack0)
+[rank0]:V0219 06:55:18.335000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode]               4 CALL_FUNCTION            1
+[rank0]:V0219 06:55:18.335000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode]               6 UNPACK_SEQUENCE          1
+[rank0]:V0219 06:55:18.335000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode]               8 RETURN_VALUE
+[rank0]:V0219 06:55:18.335000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode] 
+[rank0]:V0219 06:55:18.335000 2089 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode] 
+[rank1]:V0219 06:55:18.375000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode] MODIFIED BYTECODE torch_dynamo_resume_in_forward_at_87 /home/user/run-basic.py line 87 
+[rank1]:V0219 06:55:18.375000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode]  87           0 LOAD_GLOBAL              8 (__compiled_fn_13)
+[rank1]:V0219 06:55:18.375000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode]               2 LOAD_FAST                0 (___stack0)
+[rank1]:V0219 06:55:18.375000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode]               4 CALL_FUNCTION            1
+[rank1]:V0219 06:55:18.375000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode]               6 UNPACK_SEQUENCE          1
+[rank1]:V0219 06:55:18.375000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode]               8 RETURN_VALUE
+[rank1]:V0219 06:55:18.375000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode] 
+[rank1]:V0219 06:55:18.375000 2090 .local/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py:734] [4/0] [__bytecode] 
+class GraphModule(torch.nn.Module):
+    def forward(self, L_input_: "f32[1, 1568]", L_weight_: "f32[10, 1568]", L_bias_: "f32[10]"):
+        l_input_ = L_input_
+        l_weight_ = L_weight_
+        l_bias_ = L_bias_
+        
+         # File: /home/user/run-basic.py:56 in patched_linear, code: weight = DTensor.from_local(weight, mesh, placements)
+        weight: "f32[10, 1568]" = torch__dynamo_variables_torch_prim_from_local(l_weight_);  l_weight_ = None
+        
+         # File: /home/user/run-basic.py:58 in patched_linear, code: bias = DTensor.from_local(bias, mesh, placements)
+        bias: "f32[10]" = torch__dynamo_variables_torch_prim_from_local_1(l_bias_);  l_bias_ = None
+        
+         # File: /home/user/run-basic.py:59 in patched_linear, code: return _original_linear(input, weight, bias)
+        linear: "f32[1, 10]" = torch._C._nn.linear(l_input_, weight, bias);  l_input_ = weight = bias = None
+        return (linear,)
+        
+opcode         name       target                                                                                                                          args                      kwargs
+-------------  ---------  ------------------------------------------------------------------------------------------------------------------------------  ------------------------  --------
+placeholder    l_input_   L_input_                                                                                                                        ()                        {}
+placeholder    l_weight_  L_weight_                                                                                                                       ()                        {}
+placeholder    l_bias_    L_bias_                                                                                                                         ()                        {}
+call_function  weight     <function TorchInGraphFunctionVariable._get_handlers.<locals>.handle_from_local.<locals>.fn_with_prim_types at 0x7f8d3c20eb90>  (l_weight_,)              {}
+call_function  bias       <function TorchInGraphFunctionVariable._get_handlers.<locals>.handle_from_local.<locals>.fn_with_prim_types at 0x7f8ce815cd30>  (l_bias_,)                {}
+call_function  linear     <built-in function linear>                                                                                                      (l_input_, weight, bias)  {}
+output         output     output                                                                                                                          ((linear,),)              {}
+class GraphModule(torch.nn.Module):
+    def forward(self, L_stack0_: "f32[1, 10]"):
+        l_stack0_ = L_stack0_
+        
+         # File: /home/user/run-basic.py:88 in torch_dynamo_resume_in_forward_at_87, code: return F.log_softmax(x, dim=1)
+        log_softmax: "f32[1, 10]" = torch.nn.functional.log_softmax(l_stack0_, dim = 1);  l_stack0_ = None
+        return (log_softmax,)
+        
+opcode         name         target                                    args               kwargs
+-------------  -----------  ----------------------------------------  -----------------  ----------
+placeholder    l_stack0_    L_stack0_                                 ()                 {}
+call_function  log_softmax  <function log_softmax at 0x7f8d5261fc70>  (l_stack0_,)       {'dim': 1}
+output         output       output                                    ((log_softmax,),)  {}
+class GraphModule(torch.nn.Module):
+    def forward(self, L_input_: "f32[1, 1568]", L_weight_: "f32[10, 1568]", L_bias_: "f32[10]"):
+        l_input_ = L_input_
+        l_weight_ = L_weight_
+        l_bias_ = L_bias_
+        
+         # File: /home/user/run-basic.py:56 in patched_linear, code: weight = DTensor.from_local(weight, mesh, placements)
+        weight: "f32[10, 1568]" = torch__dynamo_variables_torch_prim_from_local(l_weight_);  l_weight_ = None
+        
+         # File: /home/user/run-basic.py:58 in patched_linear, code: bias = DTensor.from_local(bias, mesh, placements)
+        bias: "f32[10]" = torch__dynamo_variables_torch_prim_from_local_1(l_bias_);  l_bias_ = None
+        
+         # File: /home/user/run-basic.py:59 in patched_linear, code: return _original_linear(input, weight, bias)
+        linear: "f32[1, 10]" = torch._C._nn.linear(l_input_, weight, bias);  l_input_ = weight = bias = None
+        return (linear,)
+        
+opcode         name       target                                                                                                                          args                      kwargs
+-------------  ---------  ------------------------------------------------------------------------------------------------------------------------------  ------------------------  --------
+placeholder    l_input_   L_input_                                                                                                                        ()                        {}
+placeholder    l_weight_  L_weight_                                                                                                                       ()                        {}
+placeholder    l_bias_    L_bias_                                                                                                                         ()                        {}
+call_function  weight     <function TorchInGraphFunctionVariable._get_handlers.<locals>.handle_from_local.<locals>.fn_with_prim_types at 0x7fafbc402b90>  (l_weight_,)              {}
+call_function  bias       <function TorchInGraphFunctionVariable._get_handlers.<locals>.handle_from_local.<locals>.fn_with_prim_types at 0x7fafb41b0d30>  (l_bias_,)                {}
+call_function  linear     <built-in function linear>                                                                                                      (l_input_, weight, bias)  {}
+output         output     output                                                                                                                          ((linear,),)              {}
+class GraphModule(torch.nn.Module):
+    def forward(self, L_stack0_: "f32[1, 10]"):
+        l_stack0_ = L_stack0_
+        
+         # File: /home/user/run-basic.py:88 in torch_dynamo_resume_in_forward_at_87, code: return F.log_softmax(x, dim=1)
+        log_softmax: "f32[1, 10]" = torch.nn.functional.log_softmax(l_stack0_, dim = 1);  l_stack0_ = None
+        return (log_softmax,)
+        
+opcode         name         target                                    args               kwargs
+-------------  -----------  ----------------------------------------  -----------------  ----------
+placeholder    l_stack0_    L_stack0_                                 ()                 {}
+call_function  log_softmax  <function log_softmax at 0x7fafe8a27c70>  (l_stack0_,)       {'dim': 1}
+output         output       output                                    ((log_softmax,),)  {}
