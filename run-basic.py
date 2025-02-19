@@ -9,6 +9,7 @@ import torch.distributed as dist
 import torch.multiprocessing as mp
 from torch.distributed.device_mesh import init_device_mesh
 from torch.distributed._composable.fsdp import fully_shard, MixedPrecisionPolicy
+from torch.fx.passes.graph_drawer import FxGraphDrawer
 from torch.distributed.tensor import (
     distribute_tensor,
     DTensor,
@@ -19,10 +20,10 @@ from torch.distributed.tensor import (
 
 
 # Import your SimpleFSDP_data_parallel wrapper from wherever it's defined
-from frontend_simplefsdp import SimpleFSDP_data_parallel, enable_active_parametrization
+# from frontend_simplefsdp import SimpleFSDP_data_parallel, enable_active_parametrization
 from torch.distributed.tensor import distribute_tensor
 
-torch._logging.set_logs(graph_code=True)  # Logging set up
+torch._logging.set_logs(graph_breaks=True)  # Logging set up
 
 
 # --- Patch F.conv2d ---
@@ -87,6 +88,14 @@ class Net(nn.Module):
         return F.log_softmax(x, dim=1)
 
 
+def dynamo_backend(gm, sample_inputs):
+    code = gm.print_readable()
+    gm.graph.print_tabular()
+    with open("model_graph.svg", "wb") as file:
+        file.write(FxGraphDrawer(gm, "f").get_dot_graph().create_svg())
+    return gm.forward
+
+
 ########################################################################
 # 2. Define the per-process function that:
 #    - Initializes distributed, picks correct GPU
@@ -121,15 +130,16 @@ def fsdp_demo(rank, world_size):
         mp_policy = MixedPrecisionPolicy()
 
         # 2e. Wrap the model with SimpleFSDP_data_parallel
-        fsdp_model = SimpleFSDP_data_parallel(
-            model=model,
-            device_mesh=mesh,
-            mode="replicate",
-            reshard_after_forward=True,
-            mp_policy=mp_policy,
-        )
+        fsdp_model = model
+        #         fsdp_model = SimpleFSDP_data_parallel(
+        #     model=model,
+        #     device_mesh=mesh,
+        #     mode="replicate",
+        #     reshard_after_forward=True,
+        #     mp_policy=mp_policy,
+        # )
         # 2f. Compile the FSDP-wrapped model
-        compiled_model = torch.compile(fsdp_model)
+        compiled_model = torch.compile(model=fsdp_model, backend=dynamo_backend)
         # compiled_model = fsdp_model
 
         # 2g. Dummy input of shape (batch=1, channel=1, 28x28)
@@ -139,8 +149,9 @@ def fsdp_demo(rank, world_size):
             device_mesh=mesh,  # The same mesh you used for the model
             placements=[Replicate()],  # Typically replicate the input across each rank
         )
-        with enable_active_parametrization():
-            output = compiled_model(dummy_input_dt)
+        output = compiled_model(dummy_input_dt)
+        # with enable_active_parametrization():
+
         # 2j. Cleanup
         dist.destroy_process_group()
     except Exception as e:
